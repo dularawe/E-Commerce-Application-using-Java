@@ -59,21 +59,11 @@ public class product extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String p_name = request.getParameter("p_ame");
-        String description = request.getParameter("description");
-        String image = request.getParameter("image");
-        int price = Integer.parseInt(request.getParameter("price"));
-        int quantity = Integer.parseInt(request.getParameter("quantity"));
-        
-        PrintWriter out = response.getWriter();
-        out.println("Added Book....");
-        
-        addproduct b = new addproduct();
-        b.insertproduct(p_name,description,image,price,quantity);
         
         
         
-        //processRequest(request, response);
+        
+        processRequest(request, response);
     }
 
     /**
@@ -87,7 +77,20 @@ public class product extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        
+        String p_name = request.getParameter("p_ame");
+        String description = request.getParameter("description");
+        String image = request.getParameter("image");
+        int price = Integer.parseInt(request.getParameter("price"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        
+        PrintWriter out = response.getWriter();
+        out.println("Added Product....");
+        
+        addproduct b = new addproduct();
+        b.insertproduct(p_name,description,image,price,quantity);
+        //processRequest(request, response);
     }
 
     /**

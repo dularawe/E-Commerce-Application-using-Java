@@ -22,9 +22,9 @@ class addproduct {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
      Statement st;
-    void inserBook(int bookid, String title, String author) {
+    void insertproduct(String p_name, int price, int quantity, String description, String image) {
             connectToDB();
-            String query ="INSERT INTO books VALUES("+bookid+",'"+title+"','"+author+"')";    
+            String query ="INSERT INTO product VALUES('"+p_name+"',"+price+","+quantity+",'"+description+"','"+image+"')";    
             try {
                 st.executeUpdate(query);
                 System.out.println("Record inserted");
