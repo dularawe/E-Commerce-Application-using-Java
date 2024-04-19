@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,13 +19,13 @@ import java.util.logging.Logger;
  */
 class addproduct {
 
-    void insertproduct(String p_name, String description, String image, int price, int quantity) {
+    static List<addproduct> getAllBooks() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
      Statement st;
-    void insertproduct(String p_name, int price, int quantity, String description, String image) {
+    void insertproduct(String ProductName, int Price, int ProductQuantity, String ProductDescription, String ProductImage) {
             connectToDB();
-            String query ="INSERT INTO product VALUES('"+p_name+"',"+price+","+quantity+",'"+description+"','"+image+"')";    
+            String query ="INSERT INTO product VALUES('"+ProductName+"',"+Price+","+ProductQuantity+",'"+ProductDescription+"','"+ProductImage+"')";    
             try {
                 st.executeUpdate(query);
                 System.out.println("Record inserted");
@@ -42,6 +43,10 @@ private void connectToDB() {
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(addproduct.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    void insertproduct(String ProductName, String ProductDescription, String ProductImage, int Price, int ProductQuantity) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 

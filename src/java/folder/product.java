@@ -79,17 +79,17 @@ public class product extends HttpServlet {
             throws ServletException, IOException {
         
         
-        String p_name = request.getParameter("p_ame");
-        String description = request.getParameter("description");
-        String image = request.getParameter("image");
-        int price = Integer.parseInt(request.getParameter("price"));
-        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        String ProductName = request.getParameter("p_ame");
+        String ProductDescription = request.getParameter("description");
+        String ProductImage = request.getParameter("image");
+        int Price = Integer.parseInt(request.getParameter("price"));
+        int ProductQuantity = Integer.parseInt(request.getParameter("quantity"));
         
         PrintWriter out = response.getWriter();
         out.println("Added Product....");
         
         addproduct b = new addproduct();
-        b.insertproduct(p_name,description,image,price,quantity);
+        b.insertproduct(ProductName,ProductDescription,ProductImage,Price,ProductQuantity);
         //processRequest(request, response);
     }
 
