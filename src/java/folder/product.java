@@ -74,24 +74,23 @@ public class product extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-        
-        String ProductName = request.getParameter("p_ame");
-        String ProductDescription = request.getParameter("description");
-        String ProductImage = request.getParameter("image");
-        int Price = Integer.parseInt(request.getParameter("price"));
-        int ProductQuantity = Integer.parseInt(request.getParameter("quantity"));
-        
-        PrintWriter out = response.getWriter();
-        out.println("Added Product....");
-        
-        addproduct b = new addproduct();
-        b.insertproduct(ProductName,ProductDescription,ProductImage,Price,ProductQuantity);
-        //processRequest(request, response);
-    }
+   @Override
+protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+    
+    String ProductName = request.getParameter("ProductName");
+    String ProductDescription = request.getParameter("description");
+    int Price = Integer.parseInt(request.getParameter("price"));
+    int ProductQuantity = Integer.parseInt(request.getParameter("quantity"));
+    
+    PrintWriter out = response.getWriter();
+    out.println("Added Product....");
+    
+    addproduct b = new addproduct();
+    // Make sure parameters are passed in the correct order
+    b.insertproduct(ProductName,Price,ProductQuantity,ProductDescription);
+}
+
 
     /**
      * Returns a short description of the servlet.
