@@ -1,21 +1,54 @@
-.first{
-    padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+/* Styles for Add Product Form */
+.first {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 20px;
 }
-@media (min-width: 768px) {
-    .container {
-      width: 750px;
-    }
-  }
-  @media (min-width: 992px) {
-    .container {
-      width: 970px;
-    }
-  }
-  @media (min-width: 1200px) {
-    .container {
-      width: 1170px;
-    }
-  }
+
+/* Styles for Basic Information Box */
+.box {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.box h3 {
+  margin-top: 0;
+}
+
+.box1 {
+  margin-bottom: 10px;
+}
+
+.box1 h4 {
+  margin-top: 0;
+}
+
+/* Styles for Input Fields */
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+  width: calc(100% - 22px); /* Adjust for padding and border */
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Styles for Submit and Clear Buttons */
+input[type="submit"],
+input[type="reset"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #45a049;
+}
