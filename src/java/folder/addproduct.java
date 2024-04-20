@@ -14,7 +14,7 @@ public class addproduct {
 
     public void insertproduct(String ProductName, int Price, int ProductQuantity, String ProductDescription) {
         connectToDB();
-        String query = "INSERT INTO products VALUES('" + ProductName + "'," + Price + "," + ProductQuantity + ",'" + ProductDescription + "')";
+        String query = "INSERT INTO products VALUES('" +ProductName+ "',"+Price+ ","+ProductQuantity+",'"+ProductDescription+"')";
         try {
             st.executeUpdate(query);
             System.out.println("Record inserted");
