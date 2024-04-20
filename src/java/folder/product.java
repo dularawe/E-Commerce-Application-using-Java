@@ -80,15 +80,15 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     
     String ProductName = request.getParameter("ProductName");
     String ProductDescription = request.getParameter("description");
+    String ProductImage = request.getParameter("ProductImage");
     int Price = Integer.parseInt(request.getParameter("price"));
     int ProductQuantity = Integer.parseInt(request.getParameter("quantity"));
     
-    //PrintWriter out = response.getWriter();
-    //out.println("Added Product....");
+    PrintWriter out = response.getWriter();
+    out.println("Added Product....");
     
     addproduct b = new addproduct();
-    // Make sure parameters are passed in the correct order
-    b.insertproduct(ProductName,Price,ProductQuantity,ProductDescription);
+    b.insertproduct(ProductName,Price,ProductQuantity,ProductDescription,ProductImage);
 }
 
 

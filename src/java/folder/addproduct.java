@@ -12,9 +12,10 @@ public class addproduct {
 
     private Statement st;
 
-    public void insertproduct(String ProductName, int Price, int ProductQuantity, String ProductDescription) {
+    public void insertproduct(String ProductName, int Price, int ProductQuantity, String ProductDescription, String ProductImage) {
         connectToDB();
-        String query = "INSERT INTO products VALUES('" +ProductName+ "',"+Price+ ","+ProductQuantity+",'"+ProductDescription+"')";
+        String query = "INSERT INTO products (ProductName, Price, ProductQuantity, ProductDescription, ProductImage) VALUES ('" + ProductName + "', " + Price + ", " + ProductQuantity + ", '" + ProductDescription + "', '" + ProductImage + "')";
+
         try {
             st.executeUpdate(query);
             System.out.println("Record inserted");
@@ -38,4 +39,6 @@ public class addproduct {
     public static List<addproduct> getAllBooks() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+    
 }
