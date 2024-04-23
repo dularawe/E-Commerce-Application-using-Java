@@ -1,3 +1,10 @@
+<%-- 
+    Document   : addproduct
+    Created on : Apr 23, 2024, 11:50:09 AM
+    Author     : MSI
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
