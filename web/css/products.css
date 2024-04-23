@@ -1,5 +1,5 @@
 /* Styles for Products Form */
-/*navbar*/
+navbar
 .topnav {
   overflow: hidden;
   background-color: white;
@@ -23,7 +23,7 @@
 .topnav .icon {
   display: none;
 }
-/*dropdown*/
+
 
 .dropdown {
   float: right;
@@ -107,11 +107,11 @@
   box-sizing: border-box;
 }
 
-/* Create three unequal columns that floats next to each other */
+/* Create three unequal columns that floats next to each other 
 .column {
   float: left;
   padding: 10px;
-  height: 100px; /* Should be removed. Only for demonstration */
+  height: 100px;
 }
 
 .left {
@@ -126,13 +126,13 @@
   padding:100;
 }
 
-/* Clear floats after the columns */
+ Clear floats after the columns 
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
-/*search bar*/
+/*search bar
 
 * {
   box-sizing: border-box;
@@ -168,7 +168,7 @@ form.example::after {
   clear: both;
   display: table;
 }
-/*search bar*/
+/*search bar
 * {
   box-sizing: border-box;
 }
@@ -206,6 +206,33 @@ form.example::after {
 
 /*styles for cards*/
 
+/* Float four columns side by side */
+.c_column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.c_row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.c_row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .c_column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
