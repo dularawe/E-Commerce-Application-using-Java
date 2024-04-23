@@ -1,10 +1,3 @@
-<%-- 
-    Document   : addproduct
-    Created on : Apr 23, 2024, 11:50:09 AM
-    Author     : MSI
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,65 +7,58 @@
     <title>Add Product</title>
 </head>
 <body>
-    
- <div class="first">
-    <h1>Add product</h1>
-    <h4>Add your product for your customers</h4>
-    <form action="product" method="POST">
-        <table>
-            <tbody>
+    <div class="container">
+        <h1>ADD NEW ITEM</h1>
+        <p></p>
+        <form action="GentServlet" method="POST">
+            <table>
                 <tr>
                     <td>
-                        <div class="box">
-                            <h3>Basic Information</h3>
-                            <div class="box1">
-                                <h4>Input product Name</h4>
-                                <input type="text" name="ProductName">
+                        <label for="name">Product Name</label>
+                        <input type="text" id="ProductName" name="ProductName" placeholder="ProductName" />
+                    </td>
+                    <td>
+                        <label for="description">Description</label>
+                        <input type="text" id="description" name="description" placeholder="Description" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Price">Price</label>
+                        <input type="text" id="price" name="price" placeholder="Price" />
+                    </td>
+                    <td>
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" name="quantity" placeholder="Quantity" />
+                    </td>
+                </tr>
+            </table>
+            
+            <div class="Add">
+                <div class="card">
+                    <img src="images/profile.png" id="profile-pic" />
+                    <input type="file" accept="image/jpeg,image/png,image/jpg" id="input-file"/>
+                </div>
+                <div class="column"></div>
+            </div>
+            <div class="row">
+                <div class="c">
+                    <a href="#">
+                        <input type="button" value="Back" class="btn">
+                    </a>
+                    <input type="reset" value="Reset" class="btn" />
+                    <input type="submit" value="Submit" class="btn" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        let profilePic = document.getElementById("profile-pic");
+        let inputFile = document.getElementById("input-file");
 
-                                <h4>Description</h4>
-                                <input type="text" name="description" value=""  />
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="box">
-                            <h3></h3>
-                            <div class="box1">
-                                <h4>Images</h4>
-                                <input type="file" name="ProductImage">
-                                
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="box">
-                            <div class="box1">
-                                <h4>Price</h4>
-                                <input type="number" name="price" />   
-                            </div>
-                            
-                            <div class="box1">
-                                <h4>Quantity</h4>
-                                <input type="number" name="quantity"/>   
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                         <div class="box">
-                            <div class="box1">
-                                <input type="submit" value="Submit" />
-                            </div>
-                            <div class="box1">
-                                <input type="reset" value="Clear" />
-                            </div>
-                        </div>  
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </form>
- </div>
+        inputFile.onchange = function () {
+            profilePic.src = URL.createObjectURL(inputFile.files[0]);
+        };
+    </script>
 </body>
 </html>

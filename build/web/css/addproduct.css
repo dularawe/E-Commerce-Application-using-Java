@@ -1,54 +1,119 @@
-/* Styles for Add Product Form */
-.first {
-  max-width: 750px;
-  margin: 0 auto;
-  padding: 20px;
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
 }
 
-/* Styles for Basic Information Box */
-.box {
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 10px;
+body {
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.466);
 }
 
-.box h3 {
-  margin-top: 0;
+.container {
+    background-color: #ffffff;
+    padding: 35px 50px;
+    width: 70%;
+    min-width: 420px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.3);
 }
 
-.box1 {
-  margin-bottom: 10px;
+h1 {
+    font-size: 30px;
+    text-align: center;
+    color: #16a085;
+    margin-bottom: 20px;
 }
 
-.box1 h4 {
-  margin-top: 0;
+p {
+    text-align: center;
+    color: gray;
+    font-size: 14px;
+    font-weight: 400;
 }
 
-/* Styles for Input Fields */
-input[type="text"],
-input[type="number"],
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.column {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.column label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+    font-size: 14px;
+}
+
+.column input {
+    width: 100%;
+    font-weight: 400;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1.2px solid #c4cae0;
+    margin-top: 5px;
+}
+
+.Add {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 200px;
+    text-align: center;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.upload-label {
+    display: block;
+    background-color: #16a085;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.upload-label:hover {
+    background-color: #1abc9c;
+}
+
 input[type="file"] {
-  width: calc(100% - 22px); /* Adjust for padding and border */
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+    display: none;
 }
 
-/* Styles for Submit and Clear Buttons */
-input[type="submit"],
-input[type="reset"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.c {
+    text-align: center;
 }
 
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-  background-color: #45a049;
+.btn {
+    border: none;
+    padding: 10px 20px;
+    background-color: #16a085;
+    color: #ffffff;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background-color: #1abc9c;
 }
