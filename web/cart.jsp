@@ -76,12 +76,20 @@
                         <td>$150.00</td>
                     </tr>
                     <tr>
-                        <td>Tax</td>
+                        <td>Shipping</td>
                         <td>$50.00</td>
                     </tr>
                     <tr>
-                        <td>Subtotal</td>
+                        <td>Total</td>
                         <td>$200.00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="bar">
+                                Proceed To Checkout
+
+                            </div>
+                        </td>
                     </tr>
                 </table>
             </div>
