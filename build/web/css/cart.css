@@ -45,8 +45,10 @@ td a{
 }
 td:last-child{
     text-align: right;
+    background:grey ;
 }
 
 th:last-child{
     text-align: right;
+    background:grey ;
 }
