@@ -7,6 +7,7 @@ package folder;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -81,6 +82,15 @@ public class loginServlet extends HttpServlet {
         
         String password=request.getParameter("psw");
         out.println("password is:"+password);
+        
+        try{
+            Connection con=ConnectionProvider.getCon();
+        }
+        
+        catch(Exception e){
+            
+           
+        }
     }
 
     /**
