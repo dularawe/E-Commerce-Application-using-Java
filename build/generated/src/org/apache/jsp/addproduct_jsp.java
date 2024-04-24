@@ -53,7 +53,7 @@ public final class addproduct_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <div class=\"container\">\n");
       out.write("        <h1>ADD NEW ITEM</h1>\n");
       out.write("        <p></p>\n");
-      out.write("        <form action=\"GentServlet\" method=\"POST\">\n");
+      out.write("        <form action=\"product\" method=\"POST\">\n");
       out.write("            <table>\n");
       out.write("                <tr>\n");
       out.write("                    <td>\n");
@@ -68,7 +68,7 @@ public final class addproduct_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <tr>\n");
       out.write("                    <td>\n");
       out.write("                        <label for=\"Price\">Price</label>\n");
-      out.write("                        <input type=\"text\" id=\"price\" name=\"price\" placeholder=\"Price\" />\n");
+      out.write("                        <input type=\"number\" id=\"price\" name=\"price\" placeholder=\"Price\" />\n");
       out.write("                    </td>\n");
       out.write("                    <td>\n");
       out.write("                        <label for=\"quantity\">Quantity</label>\n");
@@ -80,13 +80,14 @@ public final class addproduct_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"Add\">\n");
       out.write("                <div class=\"card\">\n");
       out.write("                    <img src=\"images/profile.png\" id=\"profile-pic\" />\n");
-      out.write("                    <input type=\"file\" accept=\"image/jpeg,image/png,image/jpg\" id=\"input-file\"/>\n");
+      out.write("                    <label for=\"input-file\" class=\"upload-label\">Upload Image</label>\n");
+      out.write("                    <input type=\"file\" accept=\"image/jpeg,image/png,image/jpg\" id=\"input-file\" name=\"ProductImage\"/>\n");
       out.write("                </div>\n");
       out.write("                <div class=\"column\"></div>\n");
       out.write("            </div>\n");
       out.write("            <div class=\"row\">\n");
       out.write("                <div class=\"c\">\n");
-      out.write("                    <a href=\"#\">\n");
+      out.write("                    <a href=\"viewproduct.jsp\">\n");
       out.write("                        <input type=\"button\" value=\"Back\" class=\"btn\">\n");
       out.write("                    </a>\n");
       out.write("                    <input type=\"reset\" value=\"Reset\" class=\"btn\" />\n");

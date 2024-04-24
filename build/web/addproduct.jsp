@@ -38,7 +38,7 @@
                 <div class="card">
                     <img src="images/profile.png" id="profile-pic" />
                     <label for="input-file" class="upload-label">Upload Image</label>
-                    <input type="file" accept="image/jpeg,image/png,image/jpg" id="input-file"/>
+                    <input type="file" accept="image/jpeg,image/png,image/jpg" id="input-file" name="ProductImage"/>
                 </div>
                 <div class="column"></div>
             </div>
