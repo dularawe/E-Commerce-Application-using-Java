@@ -10,7 +10,7 @@
     <div class="container">
         <h1>ADD NEW ITEM</h1>
         <p></p>
-        <form action="product" method="POST">
+        <form action="product" method="POST" enctype="multipart/form-data">
             <table>
                 <tr>
                     <td>
