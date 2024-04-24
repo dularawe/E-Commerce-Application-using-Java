@@ -10,7 +10,7 @@
     <div class="container">
         <h1>ADD NEW ITEM</h1>
         <p></p>
-        <form action="GentServlet" method="POST">
+        <form action="product" method="POST">
             <table>
                 <tr>
                     <td>
@@ -25,7 +25,7 @@
                 <tr>
                     <td>
                         <label for="Price">Price</label>
-                        <input type="text" id="price" name="price" placeholder="Price" />
+                        <input type="number" id="price" name="price" placeholder="Price" />
                     </td>
                     <td>
                         <label for="quantity">Quantity</label>
@@ -37,13 +37,14 @@
             <div class="Add">
                 <div class="card">
                     <img src="images/profile.png" id="profile-pic" />
+                    <label for="input-file" class="upload-label">Upload Image</label>
                     <input type="file" accept="image/jpeg,image/png,image/jpg" id="input-file"/>
                 </div>
                 <div class="column"></div>
             </div>
             <div class="row">
                 <div class="c">
-                    <a href="#">
+                    <a href="viewproduct.jsp">
                         <input type="button" value="Back" class="btn">
                     </a>
                     <input type="reset" value="Reset" class="btn" />

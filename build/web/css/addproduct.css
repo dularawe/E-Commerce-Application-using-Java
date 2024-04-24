@@ -18,7 +18,7 @@ body {
     padding: 35px 50px;
     width: 70%;
     min-width: 420px;
-    margin: 0 auto;
+    margin: 20px auto 0; /* Updated margin with top space */
     border-radius: 10px;
     box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.3);
 }
@@ -37,25 +37,15 @@ p {
     font-weight: 400;
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.column {
-    flex: 1;
-    padding: 0 10px;
-}
-
-.column label {
+label {
     display: block;
     margin-bottom: 5px;
     color: black;
     font-size: 14px;
 }
 
-.column input {
+input[type="text"],
+input[type="number"] {
     width: 100%;
     font-weight: 400;
     padding: 8px 10px;
@@ -78,7 +68,7 @@ p {
 .card img {
     width: 100px;
     height: 100px;
-    border-radius: 50%;
+    border-radius: 5%;
     margin-bottom: 10px;
 }
 
