@@ -1,10 +1,12 @@
 .cart-page{
     margin: 80px auto;
 }
+
 table{
     width: 100%;
     border-collapse: collapse;
 }
+
 .cart_info{
 
     display: flex;
@@ -33,16 +35,18 @@ td a{
     color: green ;
     font-size:12px ;
 }
+
 .total_price{
     display: flex;
     justify-content: flex-end;
 }
+
 .total_price table{
     border-top: 3px solid #ff523b;
     width: 100%;
     max-width: 700px; 
-
 }
+
 td:last-child{
     text-align: right;
     background:grey ;
@@ -52,11 +56,15 @@ th:last-child{
     text-align: right;
     background:grey ;
 }
+
 .bar{
     background: grey;
     border: none;
     width: 300px;
     height: 50px;
-    
-
 }
+
+.bar p{
+    text-align: center;
+    
+} 
