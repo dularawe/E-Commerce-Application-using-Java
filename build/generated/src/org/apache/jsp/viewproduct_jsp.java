@@ -112,7 +112,7 @@ public final class viewproduct_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <td>\n");
       out.write("                        ");
       out.write("\n");
-      out.write("                        <form action=\"DeleteProductServlet\" method=\"post\">\n");
+      out.write("                        <form action=\"DeleteProduct\" method=\"post\">\n");
       out.write("    <input type=\"hidden\" name=\"ProductID\" value=\"");
       out.print(rs.getInt("ProductID"));
       out.write("\">\n");

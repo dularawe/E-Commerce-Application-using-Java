@@ -54,7 +54,7 @@
                     <td><%=rs.getInt("ProductQuantity")%></td>
                     <td>
                         <%--<button class="btn" onclick="openEditPopup('<%=rs.getInt("id")%>', '<%=rs.getString("name")%>', '<%=rs.getString("description")%>', '<%=rs.getString("price")%>')">Update</button>--%>
-                        <form action="DeleteProductServlet" method="post">
+                        <form action="DeleteProduct" method="post">
     <input type="hidden" name="ProductID" value="<%=rs.getInt("ProductID")%>">
     <input type="submit" class="btn" value="Delete">
 </form>
