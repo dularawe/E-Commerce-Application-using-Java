@@ -52,7 +52,7 @@ public final class addproduct_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<body>\n");
       out.write("    <div class=\"container\">\n");
       out.write("        <h1>ADD NEW ITEM</h1>\n");
-      out.write("        <p></p>\n");
+      out.write("   \n");
       out.write("        <form action=\"product\" method=\"POST\">\n");
       out.write("            <table>\n");
       out.write("                <tr>\n");
