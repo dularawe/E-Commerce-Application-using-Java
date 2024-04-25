@@ -9,8 +9,8 @@
 <body>
     <div class="container">
         <h1>ADD NEW ITEM</h1>
-        <p></p>
-        <form action="product" method="POST" enctype="multipart/form-data">
+   
+        <form action="product" method="POST">
             <table>
                 <tr>
                     <td>

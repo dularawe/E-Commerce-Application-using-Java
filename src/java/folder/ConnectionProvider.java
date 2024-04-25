@@ -4,17 +4,17 @@
  * and open the template in the editor.
  */
 package folder;
-import java.sql.*;
-public class ConnectionProvider {
-    public static Connection getCon()
-    {
-        try{
-           class.forName("com.mysql.cj.jdbc.Driver") ;
-        }
-       catch(Exception e)
-       {
-           
-       } 
-    
+
+import java.sql.Connection;
+
+/**
+ *
+ * @author MSI
+ */
+class ConnectionProvider {
+
+    static Connection getCon() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
 }
