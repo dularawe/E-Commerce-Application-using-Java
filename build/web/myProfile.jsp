@@ -1,15 +1,16 @@
+<%-- 
+    Document   : myProfile
+    Created on : Apr 25, 2024, 2:25:49 PM
+    Author     : HP
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-  <head>
-    <title>My Profile</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>My Profile</title>
+        <link
       href="https://fonts.googleapis.com/css?family=Inter&display=swap"
       rel="stylesheet"
     />
@@ -18,9 +19,9 @@ and open the template in the editor.
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/myProfile.css" />
-  </head>
-  <body>
-    <div class="container">
+    </head>
+    <body>
+        <div class="container">
       <div class="N1"></div>
       <div class="N2">
         <div class="N3"></div>
@@ -136,5 +137,5 @@ and open the template in the editor.
       <span class="footerContent">Footer Section</span>
     </div>
     <script src="js/myProfile.js"></script>
-  </body>
+    </body>
 </html>
