@@ -1,0 +1,607 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+  width: 1366px;
+}
+.container {
+  width: 100%;
+  height: 1500px;
+  background: rgba(255, 255, 255, 1);
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.N1 {
+  width: 100%;
+  height: 84px;
+  background: rgba(217, 217, 217, 1);
+}
+.N2 {
+  width: 71px;
+  height: 71px;
+  position: absolute;
+  top: 6px;
+  left: 30px;
+  overflow: hidden;
+}
+.N3 {
+  width: 71px;
+  height: 71px;
+  background: rgba(89, 88, 150, 1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+}
+.N4 {
+  width: 30px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 28px;
+  left: 23px;
+  font-family: Inter;
+  font-weight: Bold;
+  font-size: 12px;
+  opacity: 1;
+  text-align: left;
+}
+.N5 {
+  width: 53px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 33px;
+  left: 694px;
+  font-family: Inter;
+  font-weight: Bold;
+  font-size: 14px;
+  opacity: 1;
+  text-align: left;
+}
+.pageLink {
+  width: 175px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 141px;
+  left: 38px;
+  font-size: 15px;
+  opacity: 1;
+  text-align: left;
+}
+.helloName {
+  /* margin-top: 210px;  this can use with out the navabr */
+  margin-top: 125px;
+  margin-left: 38px;
+  display: flex;
+  background-color: rgb(127, 240, 240);
+  width: 247px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.pPic {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+.pName {
+  margin-left: 20px;
+  margin-top: -10px;
+}
+.helloH3 {
+  margin-top: 19px;
+  margin-bottom: 3px;
+}
+.nameSpan {
+  margin-left: -7px;
+}
+.sideBar {
+  width: 247px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  position: absolute;
+  top: 333px;
+  left: 38px;
+  border-radius: 17px;
+  box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.sideBarContent {
+  width: 148px;
+  height: 315px;
+  position: absolute;
+  top: 40px;
+  left: 35px;
+  overflow: hidden;
+}
+.content1 {
+  width: 102px;
+  height: 20px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.sideBarDot {
+  width: 20px;
+  height: 20px;
+  background: rgba(192, 117, 117, 1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+}
+.myDetails {
+  width: 67px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 2px;
+  left: 35px;
+  font-family: Inter;
+  font-size: 13px;
+  opacity: 1;
+  text-align: center;
+}
+.myDetails:hover {
+  font-weight: bold;
+}
+
+.content2 {
+  width: 101px;
+  height: 20px;
+  background: url("../images/v7_23.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 52px;
+  left: 0px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.myOrders {
+  width: 65px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 2px;
+  left: 36px;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 13px;
+  opacity: 1;
+  text-align: center;
+}
+.myOrders:hover {
+  font-weight: bold;
+}
+.content3 {
+  width: 86px;
+  height: 20px;
+  position: absolute;
+  top: 101px;
+  left: 0px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.wishList {
+  width: 50px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 2px;
+  left: 36px;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 13px;
+  opacity: 1;
+  text-align: center;
+}
+.wishList:hover {
+  font-weight: bold;
+}
+.content4 {
+  width: 132px;
+  height: 20px;
+  position: absolute;
+  top: 150px;
+  left: 0px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.deliveryDetails {
+  width: 97px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 2px;
+  left: 35px;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 13px;
+  opacity: 1;
+  text-align: center;
+}
+.deliveryDetails:hover {
+  font-weight: bold;
+}
+.content5 {
+  width: 148px;
+  height: 20px;
+  position: absolute;
+  top: 200px;
+  left: 0px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.changePassword {
+  width: 113px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 2px;
+  left: 35px;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 13px;
+  opacity: 1;
+  text-align: center;
+}
+.changePassword:hover {
+  font-weight: bold;
+}
+.content6 {
+  width: 91px;
+  height: 20px;
+  position: absolute;
+  top: 248px;
+  left: 0px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.payment {
+  width: 55px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 2px;
+  left: 36px;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 13px;
+  opacity: 1;
+  text-align: center;
+}
+.payment:hover {
+  font-weight: bold;
+}
+.content7 {
+  width: 80px;
+  height: 20px;
+  position: absolute;
+  top: 295px;
+  left: 0px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.Logout {
+  width: 44px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 2px;
+  left: 36px;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 13px;
+  opacity: 1;
+  text-align: center;
+}
+.Logout:hover {
+  font-weight: bold;
+}
+.perInfo {
+  width: 950px;
+  height: 800px;
+  opacity: 1;
+  position: absolute;
+  top: 206px;
+  left: 408px;
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 26px;
+}
+.perInfoTitle {
+  width: 179px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 25px;
+  left: 41px;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 18px;
+  opacity: 1;
+  text-align: center;
+}
+.empty {
+  height: 1px;
+  width: 948px;
+  background-color: rgb(0, 0, 0);
+  margin-top: 73px;
+}
+.pImage {
+  width: 100px;
+  height: 100px;
+  background: rgba(184, 152, 152, 1);
+  opacity: 1;
+  position: absolute;
+  top: 95px;
+  left: 42px;
+  border-radius: 50%;
+}
+.Name_Input {
+  width: 850px;
+  height: 91px;
+  opacity: 1;
+  position: absolute;
+  top: 222px;
+  left: 42px;
+  overflow: hidden;
+}
+.fName {
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 16px;
+  opacity: 1;
+  text-align: center;
+}
+.nameInput {
+  width: 350px;
+  height: 38px;
+  background: rgba(192, 208, 210, 1);
+  opacity: 1;
+  position: absolute;
+  top: 36px;
+  left: 0px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: none;
+}
+.lName {
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 16px;
+  opacity: 1;
+  text-align: center;
+}
+.nameInput1 {
+  width: 350px;
+  height: 38px;
+  background: rgba(192, 208, 210, 1);
+  opacity: 1;
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  border-radius: 5px;
+  overflow: hidden;
+  border: none;
+}
+.DoB_Address {
+  width: 850px;
+  height: 91px;
+  opacity: 1;
+  position: absolute;
+  top: 330px;
+  left: 42px;
+  overflow: hidden;
+}
+.DoB {
+  width: 97px;
+  color: rgba(0, 0, 0, 1);
+  position: relative;
+  top: 0px;
+  left: 0px;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 16px;
+  opacity: 1;
+  text-align: center;
+}
+.dateInput {
+  width: 350px;
+  height: 38px;
+  background: rgba(192, 208, 210, 1);
+  opacity: 1;
+  position: absolute;
+  top: 36px;
+  left: 0px;
+  padding: 0px 10px;
+  border-radius: 5px;
+  border: none;
+  overflow: hidden;
+}
+.address {
+  width: 97px;
+  color: rgba(0, 0, 0, 1);
+  position: relative;
+  top: 0px;
+  left: 38.5%;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 16px;
+  opacity: 1;
+  text-align: center;
+}
+.addressInput {
+  width: 350px;
+  height: 38px;
+  background: rgba(192, 208, 210, 1);
+  opacity: 1;
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  padding: 0px 10px;
+  border-radius: 5px;
+  border: none;
+  overflow: hidden;
+}
+.gender {
+  width: 194px;
+  height: 55px;
+  position: absolute;
+  top: 445px;
+  left: 45px;
+  overflow: hidden;
+}
+form {
+  display: flex;
+  padding-top: 15px;
+}
+.genderTitle {
+  width: 57px;
+  color: rgba(0, 0, 0, 1);
+  position: relative;
+  top: 0px;
+  left: 0px;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 16px;
+  opacity: 1;
+  text-align: center;
+}
+.pNum {
+  width: 350px;
+  height: 91px;
+  opacity: 1;
+  position: absolute;
+  top: 530px;
+  left: 42px;
+  overflow: hidden;
+}
+.pNumInput {
+  width: 114px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 16px;
+  opacity: 1;
+  text-align: center;
+}
+.numInput {
+  width: 350px;
+  height: 38px;
+  background: rgba(192, 208, 210, 1);
+  opacity: 1;
+  position: absolute;
+  top: 36px;
+  left: 0px;
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.Email_Cancel_Save {
+  width: 850px;
+  height: 91px;
+  opacity: 1;
+  position: absolute;
+  top: 620px;
+  left: 42px;
+}
+.emailTitle {
+  width: 41px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 10px;
+  left: 3px;
+  font-family: Inter;
+  font-weight: Medium;
+  font-size: 16px;
+  opacity: 1;
+  text-align: center;
+}
+.emailInput {
+  width: 350px;
+  height: 38px;
+  background: rgba(192, 208, 210, 1);
+  opacity: 1;
+  position: absolute;
+  top: 46px;
+  left: 0px;
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.Cancel {
+  width: 100px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  left: 60%;
+  top: 50%;
+  font-family: Poppins;
+  font-weight: Regular;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(241, 233, 233);
+  padding: 7.5px 15px;
+  cursor: pointer;
+}
+.Cancel:hover {
+  font-size: 17px;
+  font-weight: 500;
+}
+.Save {
+  width: 170px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  left: 75%;
+  top: 50%;
+  font-family: Poppins;
+  font-weight: Regular;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(225, 31, 31, 1);
+  padding: 8px 15px;
+  cursor: pointer;
+}
+.Save:hover {
+  font-size: 17px;
+  font-weight: 500;
+}
+.name {
+  color: #fff;
+}
+.footerBackGround {
+  width: 100%;
+  height: 377px;
+  background: rgba(0, 11, 51, 1);
+  opacity: 1;
+  position: absolute;
+  top: 1123px;
+  left: 0px;
+  overflow: hidden;
+}
+.footerContent {
+  width: 240px;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 1291px;
+  left: 666px;
+  font-family: Inter;
+  font-weight: Semi Bold;
+  font-size: 34px;
+  opacity: 1;
+  text-align: center;
+}
