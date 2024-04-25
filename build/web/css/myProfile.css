@@ -461,7 +461,7 @@ body {
   left: 45px;
   overflow: hidden;
 }
-form {
+.form2 {
   display: flex;
   padding-top: 15px;
 }
