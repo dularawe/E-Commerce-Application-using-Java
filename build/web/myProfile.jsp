@@ -1,16 +1,11 @@
-<%-- 
-    Document   : myProfile
-    Created on : Apr 25, 2024, 2:25:49 PM
-    Author     : HP
---%>
-
+<%-- Document : myProfile Created on : Apr 25, 2024, 2:25:49 PM Author : HP --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>My Profile</title>
-        <link
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>My Profile</title>
+    <link
       href="https://fonts.googleapis.com/css?family=Inter&display=swap"
       rel="stylesheet"
     />
@@ -19,9 +14,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/myProfile.css" />
-    </head>
-    <body>
-        <div class="container">
+  </head>
+  <body>
+    <div class="container">
       <div class="N1"></div>
       <div class="N2">
         <div class="N3"></div>
@@ -88,48 +83,50 @@
         </div>
 
         <div class="perInfoContent">
-          <img src="images/images.jpg" alt="" class="pImage" />
+            <form action="myProfile" method="POST">
+            <img src="images/images.jpg" alt="" class="pImage" />
 
-          <div class="Name_Input">
-            <span class="fName"> First Name</span>
-            <input type="text" class="nameInput" required />
-            <span class="lName"> Last Name</span>
-            <input type="text" class="nameInput1" required />
-          </div>
+            <div class="Name_Input">
+              <span class="fName"> First Name</span>
+              <input type="text" class="nameInput" required />
+              <span class="lName"> Last Name</span>
+              <input type="text" class="nameInput1" required />
+            </div>
 
-          <div class="DoB_Address">
-            <span class="DoB">Date of Birth</span>
-            <input type="date" class="dateInput" required />
-            <span class="address">Address</span>
-            <input type="text" class="addressInput" required />
-          </div>
+            <div class="DoB_Address">
+              <span class="DoB">Date of Birth</span>
+              <input type="date" class="dateInput" required />
+              <span class="address">Address</span>
+              <input type="text" class="addressInput" required />
+            </div>
 
-          <div class="gender">
-            <span class="genderTitle">Gender</span>
-            <form>
-              <input type="radio" id="male" name="gender" value="male" />
-              <label for="male">Male</label><br />
-              <input type="radio" id="female" name="gender" value="female" />
-              <label for="female">Female</label><br />
-            </form>
-          </div>
+            <div class="gender">
+              <span class="genderTitle">Gender</span>
+              <form class="form2">
+                <input type="radio" id="male" name="gender" value="male" />
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" />
+                <label for="female">Female</label><br />
+              </form>
+            </div>
 
-          <div class="pNum">
-            <span class="pNumInput">Phone Number</span>
-            <input type="number" class="numInput" required />
-          </div>
+            <div class="pNum">
+              <span class="pNumInput">Phone Number</span>
+              <input type="number" class="numInput" required />
+            </div>
 
-          <div class="Email_Cancel_Save">
-            <span class="emailTitle">Email</span>
-            <input type="email" class="emailInput" required />
-            <input
-              type="reset"
-              value="Cancel"
-              class="Cancel"
-              onclick="clearFields()"
-            />
-            <input type="submit" value="Save Changes" class="Save" />
-          </div>
+            <div class="Email_Cancel_Save">
+              <span class="emailTitle">Email</span>
+              <input type="email" class="emailInput" required />
+              <input
+                type="reset"
+                value="Cancel"
+                class="Cancel"
+                onclick="clearFields()"
+              />
+              <input type="submit" value="Save Changes" class="Save" />
+            </div>
+          </form>
         </div>
       </div>
 
@@ -137,5 +134,5 @@
       <span class="footerContent">Footer Section</span>
     </div>
     <script src="js/myProfile.js"></script>
-    </body>
+  </body>
 </html>

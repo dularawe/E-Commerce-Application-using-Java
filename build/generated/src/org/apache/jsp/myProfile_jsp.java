@@ -43,13 +43,12 @@ public final class myProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\n");
       out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>My Profile</title>\n");
-      out.write("        <link\n");
+      out.write("  <head>\n");
+      out.write("    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n");
+      out.write("    <title>My Profile</title>\n");
+      out.write("    <link\n");
       out.write("      href=\"https://fonts.googleapis.com/css?family=Inter&display=swap\"\n");
       out.write("      rel=\"stylesheet\"\n");
       out.write("    />\n");
@@ -58,9 +57,9 @@ public final class myProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("      rel=\"stylesheet\"\n");
       out.write("    />\n");
       out.write("    <link rel=\"stylesheet\" href=\"css/myProfile.css\" />\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        <div class=\"container\">\n");
+      out.write("  </head>\n");
+      out.write("  <body>\n");
+      out.write("    <div class=\"container\">\n");
       out.write("      <div class=\"N1\"></div>\n");
       out.write("      <div class=\"N2\">\n");
       out.write("        <div class=\"N3\"></div>\n");
@@ -145,7 +144,7 @@ public final class myProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("          <div class=\"gender\">\n");
       out.write("            <span class=\"genderTitle\">Gender</span>\n");
-      out.write("            <form>\n");
+      out.write("            <form class=\"form2\">\n");
       out.write("              <input type=\"radio\" id=\"male\" name=\"gender\" value=\"male\" />\n");
       out.write("              <label for=\"male\">Male</label><br />\n");
       out.write("              <input type=\"radio\" id=\"female\" name=\"gender\" value=\"female\" />\n");
@@ -176,7 +175,7 @@ public final class myProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("      <span class=\"footerContent\">Footer Section</span>\n");
       out.write("    </div>\n");
       out.write("    <script src=\"js/myProfile.js\"></script>\n");
-      out.write("    </body>\n");
+      out.write("  </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
