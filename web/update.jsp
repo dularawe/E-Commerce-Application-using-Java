@@ -16,14 +16,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Update Item</title>
         <script>
-        function openEditPopup(ProductID, ProductName, ProductDescription, Price, ProductQuantity) {
-            document.getElementById('editProductID').value = ProductID;
-            document.getElementById('editProductName').value = ProductName;
-            document.getElementById('editProductDescription').value = ProductDescription;
-            document.getElementById('editPrice').value = Price;
-            document.getElementById('editProductQuantity').value = ProductQuantity;
-            document.getElementById('editPopup').style.display = 'block';
-        }
+        function openEditPopup(ProductID, ProductImage, ProductName, ProductDescription, Price, ProductQuantity) {
+    document.getElementById('editProductID').value = ProductID;
+    document.getElementById('editProductName').value = ProductName;
+    document.getElementById('editProductDescription').value = ProductDescription;
+    document.getElementById('editPrice').value = Price;
+    document.getElementById('editProductQuantity').value = ProductQuantity;
+    document.getElementById('editPopup').style.display = 'block';
+}
+
+
 
         function closeEditPopup() {
             document.getElementById('editPopup').style.display = 'none';
@@ -40,13 +42,13 @@
       <table class="product-display-table">
          <thead>
          <tr>
-            <th>ProductID</th>
-            <th>ProductName</th>
-            <th>ProductDescription</th>
+            <th>Product ID</th>
+            <th>Product Image</th>
+            <th>Product Name</th>
+            <th>Product Description</th>
             <th>Price</th>
-            <th>ProductQuantity</th>
-            <th>ProductImage</th>
-            <th>action</th>
+            <th>Product Quantity</th>
+            <th>Action</th>
          </tr>
          </thead>
          
@@ -67,7 +69,7 @@
                 <td><%=rs.getString("ProductName")%></td>
                 <td><%=rs.getString("ProductDescription")%></td>
                 <td><%=rs.getInt("Price")%></td>
-                <td><%=rs.getString("ProductQuantity")%></td>
+                <td><%=rs.getInt("ProductQuantity")%></td>
                 <td>
                     <button onclick="openEditPopup('<%=rs.getInt("ProductID")%>', '<%=rs.getString("ProductImage")%>', '<%=rs.getString("ProductName")%>', '<%=rs.getString("ProductDescription")%>', '<%=rs.getInt("Price")%>', '<%=rs.getInt("ProductQuantity")%>')">Update</button>
                 </td>
@@ -80,8 +82,8 @@
     </div>
       <div id="editPopup" class="editPopup-content">
         <span class="close" onclick="closeEditPopup()">&times;</span>
-        <h2>Edit Book Details</h2>
-        <form action="update" method="post">
+        <h2>Edit Product Details</h2>
+        <form action="newupdate" method="post">
             <input type="hidden" id="editProductID" name="id">
             <label for="editProductName">Name:</label>
             <input type="text" id="editProductName" name="name"><br><br>
