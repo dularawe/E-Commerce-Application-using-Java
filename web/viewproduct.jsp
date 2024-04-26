@@ -20,6 +20,7 @@
         <div class="container"><br>
         <h1>Product</h1>
         <a href="addproduct.jsp"><input type="submit" value="Add" class="sbtn"></a>
+        <a href="update.jsp"><input type="submit" value="Update" class="sbtn">
     <div class="product-display">
       <table class="product-display-table">
          <thead>
@@ -49,7 +50,7 @@
                    <td><%=rs.getInt("ProductID")%></td>
                     <td><%=rs.getString("ProductImage")%></td>
                     <td><%=rs.getString("ProductName")%></td>
-                    <td><%=rs.getString("ProductQuantity")%></td>
+                    <td><%=rs.getString("ProductDescription")%></td>
                     <td><%=rs.getString("Price")%></td>
                     <td><%=rs.getInt("ProductQuantity")%></td>
                     <td>
