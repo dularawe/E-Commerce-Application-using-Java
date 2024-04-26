@@ -32,7 +32,7 @@ public final class addproduct_jsp extends org.apache.jasper.runtime.HttpJspBase
     try {
       response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
-      			null, true, 8192, true);
+          null, true, 8192, true);
       _jspx_page_context = pageContext;
       application = pageContext.getServletContext();
       config = pageContext.getServletConfig();
@@ -41,73 +41,6 @@ public final class addproduct_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-<<<<<<< HEAD
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("<html lang=\"en\">\r\n");
-      out.write("<head>\r\n");
-      out.write("    <meta charset=\"UTF-8\">\r\n");
-      out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/addproduct.css\">\r\n");
-      out.write("    <title>Add Product</title>\r\n");
-      out.write("</head>\r\n");
-      out.write("<body>\r\n");
-      out.write("    <div class=\"container\">\r\n");
-      out.write("        <h1>ADD NEW ITEM</h1>\r\n");
-      out.write("        <p></p>\r\n");
-      out.write("        <form action=\"product\" method=\"POST\" enctype=\"multipart/form-data\">\r\n");
-      out.write("            <table>\r\n");
-      out.write("                <tr>\r\n");
-      out.write("                    <td>\r\n");
-      out.write("                        <label for=\"name\">Product Name</label>\r\n");
-      out.write("                        <input type=\"text\" id=\"ProductName\" name=\"ProductName\" placeholder=\"ProductName\" />\r\n");
-      out.write("                    </td>\r\n");
-      out.write("                    <td>\r\n");
-      out.write("                        <label for=\"description\">Description</label>\r\n");
-      out.write("                        <input type=\"text\" id=\"description\" name=\"description\" placeholder=\"Description\" />\r\n");
-      out.write("                    </td>\r\n");
-      out.write("                </tr>\r\n");
-      out.write("                <tr>\r\n");
-      out.write("                    <td>\r\n");
-      out.write("                        <label for=\"Price\">Price</label>\r\n");
-      out.write("                        <input type=\"number\" id=\"price\" name=\"price\" placeholder=\"Price\" />\r\n");
-      out.write("                    </td>\r\n");
-      out.write("                    <td>\r\n");
-      out.write("                        <label for=\"quantity\">Quantity</label>\r\n");
-      out.write("                        <input type=\"number\" id=\"quantity\" name=\"quantity\" placeholder=\"Quantity\" />\r\n");
-      out.write("                    </td>\r\n");
-      out.write("                </tr>\r\n");
-      out.write("            </table>\r\n");
-      out.write("            \r\n");
-      out.write("            <div class=\"Add\">\r\n");
-      out.write("                <div class=\"card\">\r\n");
-      out.write("                    <img src=\"images/profile.png\" id=\"profile-pic\" />\r\n");
-      out.write("                    <label for=\"input-file\" class=\"upload-label\">Upload Image</label>\r\n");
-      out.write("                    <input type=\"file\" accept=\"image/jpeg,image/png,image/jpg\" id=\"input-file\" name=\"ProductImage\"/>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <div class=\"column\"></div>\r\n");
-      out.write("            </div>\r\n");
-      out.write("            <div class=\"row\">\r\n");
-      out.write("                <div class=\"c\">\r\n");
-      out.write("                    <a href=\"viewproduct.jsp\">\r\n");
-      out.write("                        <input type=\"button\" value=\"Back\" class=\"btn\">\r\n");
-      out.write("                    </a>\r\n");
-      out.write("                    <input type=\"reset\" value=\"Reset\" class=\"btn\" />\r\n");
-      out.write("                    <input type=\"submit\" value=\"Submit\" class=\"btn\" />\r\n");
-      out.write("                </div>\r\n");
-      out.write("            </div>\r\n");
-      out.write("        </form>\r\n");
-      out.write("    </div>\r\n");
-      out.write("    <script>\r\n");
-      out.write("        let profilePic = document.getElementById(\"profile-pic\");\r\n");
-      out.write("        let inputFile = document.getElementById(\"input-file\");\r\n");
-      out.write("\r\n");
-      out.write("        inputFile.onchange = function () {\r\n");
-      out.write("            profilePic.src = URL.createObjectURL(inputFile.files[0]);\r\n");
-      out.write("        };\r\n");
-      out.write("    </script>\r\n");
-      out.write("</body>\r\n");
-      out.write("</html>\r\n");
-=======
       out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"en\">\n");
       out.write("<head>\n");
@@ -119,8 +52,7 @@ public final class addproduct_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<body>\n");
       out.write("    <div class=\"container\">\n");
       out.write("        <h1>ADD NEW ITEM</h1>\n");
-      out.write("   \n");
-      out.write("        <form action=\"product\" method=\"POST\">\n");
+      out.write("        <form action=\"product\" method=\"POST\" enctype=\"multipart/form-data\">\n");
       out.write("            <table>\n");
       out.write("                <tr>\n");
       out.write("                    <td>\n");
@@ -173,7 +105,6 @@ public final class addproduct_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </script>\n");
       out.write("</body>\n");
       out.write("</html>\n");
->>>>>>> 7d18f3d4177817a9bb07646094d60377caae0c9d
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
