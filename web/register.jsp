@@ -6,10 +6,33 @@
     <title>Register</title>
 </head>
 <body>
-    <form action="">
-        <h2>Register Form</h2>
-        <label for="">First Name</label>
-        <input type="text" name="firstName" class="fnameInput">
+    <form action="register.php" method="post">
+        <label for="first_name">First Name:</label><br>
+        <input type="text" id="first_name" name="first_name" required><br>
+        
+        <label for="last_name">Last Name:</label><br>
+        <input type="text" id="last_name" name="last_name" required><br>
+        
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br>
+        
+        <label for="mobile">Mobile:</label><br>
+        <input type="text" id="mobile" name="mobile" required><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="4" cols="50" required></textarea><br>
+        
+        <input type="submit" value="Register">
     </form>
 </body>
 </html>
