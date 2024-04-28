@@ -12,5 +12,5 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Login Failed
+        
 </html>

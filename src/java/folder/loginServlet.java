@@ -21,6 +21,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -95,13 +96,16 @@ public class loginservlet extends HttpServlet {
         ResultSet rs = ps.executeQuery();
 
         if (rs.next()) {
-            RequestDispatcher rd = request.getRequestDispatcher("Products.jsp");
-            rd.forward(request, response);
+            // Create or retrieve HttpSession object
+            HttpSession session = request.getSession();
+            // Set an attribute in the session to identify the user
+            session.setAttribute("emailId", email);
+            
+            // Redirect to Products.jsp
+            response.sendRedirect("Products.jsp");
         } else {
-            response.setContentType("text/html");
-            PrintWriter out = response.getWriter();
-            out.println("<font color=red size=18> Login failed<br>");
-            out.println("<a href=welcome.jsp> Try again</a>");
+            // Failed login attempt, redirect back to login.jsp
+            response.sendRedirect("login.jsp?error=invalid");
         }
     } catch (ClassNotFoundException | SQLException ex) {
         Logger.getLogger(loginservlet.class.getName()).log(Level.SEVERE, null, ex);
