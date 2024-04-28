@@ -84,48 +84,48 @@
 
         <div class="perInfoContent">
             <form action="myProfile" method="POST">
-            <img src="images/images.jpg" alt="" class="pImage" />
+               <img src="images/images.jpg" alt="" class="pImage" />
 
-            <div class="Name_Input">
-              <span class="fName"> First Name</span>
-              <input type="text" class="nameInput" required />
-              <span class="lName"> Last Name</span>
-              <input type="text" class="nameInput1" required />
-            </div>
+                <div class="Name_Input">
+                  <span class="fName"> First Name</span>
+                  <input type="text" name="FirstName" class="nameInput" required />
+                  <span class="lName"> Last Name</span>
+                  <input type="text" name="LastName" class="nameInput1" required />
+                </div>
 
-            <div class="DoB_Address">
-              <span class="DoB">Date of Birth</span>
-              <input type="date" class="dateInput" required />
-              <span class="address">Address</span>
-              <input type="text" class="addressInput" required />
-            </div>
+                <div class="DoB_Address">
+                  <span class="DoB">Date of Birth</span>
+                  <input type="date" name="DoB" class="dateInput" required />
+                  <span class="address">Address</span>
+                  <input type="text" name="Address" class="addressInput" required />
+                </div>
 
-            <div class="gender">
-              <span class="genderTitle">Gender</span>
-              <form class="form2">
-                <input type="radio" id="male" name="gender" value="male" />
-                <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="female" />
-                <label for="female">Female</label><br />
-              </form>
-            </div>
+                <div class="gender">
+                  <span class="genderTitle">Gender</span>
+                  <div class="form2">
+                    <input type="radio" id="male" name="Gender" value="male" />
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="Gender" value="female" />
+                    <label for="female">Female</label><br />
+                  </div>
+                </div>
 
-            <div class="pNum">
-              <span class="pNumInput">Phone Number</span>
-              <input type="number" class="numInput" required />
-            </div>
+                <div class="pNum">
+                  <span class="pNumInput">Phone Number</span>
+                  <input type="number" name="Number" class="numInput" required />
+                </div>
 
-            <div class="Email_Cancel_Save">
-              <span class="emailTitle">Email</span>
-              <input type="email" class="emailInput" required />
-              <input
-                type="reset"
-                value="Cancel"
-                class="Cancel"
-                onclick="clearFields()"
-              />
-              <input type="submit" value="Save Changes" class="Save" />
-            </div>
+                <div class="Email_Cancel_Save">
+                  <span class="emailTitle">Email</span>
+                  <input type="email" name="Email" class="emailInput" required />
+                  <input
+                    type="reset"
+                    value="Cancel"
+                    class="Cancel"
+                    onclick="clearFields()"
+                  />
+                  <input type="submit" value="Save Changes" class="Save" />
+                </div>
           </form>
         </div>
       </div>
