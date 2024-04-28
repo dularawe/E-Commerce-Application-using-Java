@@ -17,7 +17,7 @@
           
          <div class="row">
               <div class="column_1" style="background-color:#ffffcc">
-                  <form action="loginServlet" method="post">
+                  <form action="loginservletnew" method="post">
                   <div class="row_1">
                       <h2>L O G I N</h2>
                            

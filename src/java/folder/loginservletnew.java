@@ -7,7 +7,6 @@ package folder;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,19 +14,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author DELL
  */
-@WebServlet(name = "loginservlet", urlPatterns = {"/loginservlet"})
-public class loginservlet extends HttpServlet {
+@WebServlet(name = "loginservletnew", urlPatterns = {"/loginservletnew"})
+public class loginservletnew extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -46,10 +45,10 @@ public class loginservlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet loginservlet</title>");            
+            out.println("<title>Servlet loginservletnew</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet loginservlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet loginservletnew at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -81,36 +80,67 @@ public class loginservlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-            // processRequest(request, response);
- 
-            try {
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce", "root", "");
+       // processRequest(request, response);
+       
+       
+       // processRequest(request, response);
         String email = request.getParameter("mail");
         String password = request.getParameter("psw");
-        PreparedStatement ps = con.prepareStatement("SELECT Email FROM users WHERE Email=? AND Password=?");
-        ps.setString(1, email);
-        ps.setString(2, password);
-        ResultSet rs = ps.executeQuery();
 
-        if (rs.next()) {
-            RequestDispatcher rd = request.getRequestDispatcher("Products.jsp");
-            rd.forward(request, response);
-        } else {
-            response.setContentType("text/html");
-            PrintWriter out = response.getWriter();
-            out.println("<font color=red size=18> Login failed<br>");
-            out.println("<a href=welcome.jsp> Try again</a>");
-        }
-    } catch (ClassNotFoundException | SQLException ex) {
-        Logger.getLogger(loginservlet.class.getName()).log(Level.SEVERE, null, ex);
-    }
-       
-       
-       
-       
-       
+        // Check if email and password are provided
+        if (email != null && password != null) {
+            try {
+                // Establishing database connection
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection connection = null;
+                try {
+                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce", "root", "");
+                } catch (SQLException ex) {
+                    Logger.getLogger(loginservlet.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                // Query to retrieve password for the given email
+                String query = "SELECT password FROM users WHERE email = ?";
+                PreparedStatement preparedStatement = connection.prepareStatement(query);
+                preparedStatement.setString(1, email);
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                // If email is found in the database
+                if (resultSet.next()) {
+                    String dbPassword = resultSet.getString("password");
+
+                    // If the provided password matches the one in the database
+                    if (password.equals(dbPassword)) {
+                        // Authentication successful, create session and redirect to home.jsp
+
+                        HttpSession httpSession = request.getSession();
+                        httpSession.setAttribute("emailId", email);
+                        response.sendRedirect("Products.jsp");
+                    } else {
+                        // Password does not match
+                        response.sendRedirect("login.jsp?error=password");
+                    }
+                } else {
+                    // Email not found in the database
+                    response.sendRedirect("login.jsp?error=email");
+                }
+
+                // Closing resources
+                resultSet.close();
+                preparedStatement.close();
+                connection.close();
+
+            } 
+            catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(loginservlet.class.getName()).log(Level.SEVERE, null, ex);
+                // Redirect to an error page or handle the error appropriately
+                response.sendRedirect("error.jsp");
+            }
+        } 
+        else {
+            // Email or password not provided
+            response.sendRedirect("login.jsp?error=empty");
+            }
        
        
        
@@ -135,9 +165,5 @@ public class loginservlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    private PreparedStatement conPreparedStatement(String select_Emal_from_users_where_Email_and_Pa) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }
