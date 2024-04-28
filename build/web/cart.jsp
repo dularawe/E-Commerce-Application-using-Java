@@ -32,7 +32,7 @@
                        </div> 
 
                     </td>
-                    <td><input type="number" value="1"></td>
+                    <td><input type="number" name="quan"></td>
                     <td>$50</td>
                 </tr>
                 <tr>
@@ -48,7 +48,7 @@
                        </div> 
 
                     </td>
-                    <td><input type="number" value="1"></td>
+                    <td><input type="number" name="quan"></td>
                     <td>$50</td>
                 </tr>
                 <tr>
