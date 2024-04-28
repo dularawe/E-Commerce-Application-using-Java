@@ -76,7 +76,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     int ProductQuantity = Integer.parseInt(request.getParameter("quantity"));
     
     PrintWriter out = response.getWriter();
-    out.println("Added Product....");
+    out.println("<script>window.location.href='viewproduct.jsp';</script>");
     
     addProduct b = new addProduct();
     b.insertProduct(ProductName,Price,ProductQuantity,ProductDescription,ProductImage);

@@ -74,7 +74,7 @@ public class newupdate extends HttpServlet {
             con.close();
            
             if (rowsAffected > 0) {
-                out.println("<h3>Product with ID " + id + " updated successfully!</h3>");
+                request.getRequestDispatcher("viewproduct.jsp").forward(request, response);
             } else {
                 out.println("<h3>Failed to update product with ID " + id + "!</h3>");
             }

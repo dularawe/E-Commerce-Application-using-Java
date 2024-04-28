@@ -68,7 +68,7 @@ public class DeleteProduct extends HttpServlet {
 
                 
                 if (rowsAffected > 0) {
-                    out.println("<h3>Product with ID " + ProductID + " deleted successfully!</h3>");
+                    request.getRequestDispatcher("viewproduct.jsp").forward(request, response);
                 } else {
                     out.println("<h3>Failed to delete product with ID " + ProductID + "!</h3>");
                 }
