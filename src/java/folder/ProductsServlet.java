@@ -68,8 +68,22 @@ public class ProductsServlet extends HttpServlet {
             throws ServletException, IOException {
         
         
+        String ProductsName = request.getParameter("ProductsName");
+    String ProductsDescription = request.getParameter("description");
+    String ProductsImage = request.getParameter("ProductsImage");
+    int Price = Integer.parseInt(request.getParameter("price"));
+    int ProductsQuantity = Integer.parseInt(request.getParameter("quantity"));
+    
+    PrintWriter out = response.getWriter();
+    out.println("Added Product....");
+    
+    addProduct b = new addProduct();
+    b.insertProduct(ProductsName,Price,ProductsQuantity,ProductsDescription,ProductsImage);
+}
+
+        
         //processRequest(request, response);
-    }
+    
 
     /**
      * Returns a short description of the servlet.
