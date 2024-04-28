@@ -68,31 +68,22 @@ public class ProductsServlet extends HttpServlet {
             throws ServletException, IOException {
         
         
-        String ProductsName = request.getParameter("ProductsName");
-    String ProductsDescription = request.getParameter("description");
-    String ProductsImage = request.getParameter("ProductsImage");
-    int Price = Integer.parseInt(request.getParameter("price"));
-    int ProductsQuantity = Integer.parseInt(request.getParameter("quantity"));
-    
-    PrintWriter out = response.getWriter();
-    out.println("Added Product....");
-    
-    addProduct b = new addProduct();
-    b.insertProduct(ProductsName,Price,ProductsQuantity,ProductsDescription,ProductsImage);
-}
+// Retrieve form data
+        String productName = request.getParameter("productName");
+        int price = Integer.parseInt(request.getParameter("price"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        String description = request.getParameter("description");
+        String image = request.getParameter("image");
+
+        // Call method to insert product into database
+        Products products = new Products();
+        products.insertProducts(productName, price, quantity, description, image);
+
+        // Redirect back to the HTML page or a success page
+        response.sendRedirect("products.jsp");
 
         
-        //processRequest(request, response);
-    
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+       
+    }
 
 }
