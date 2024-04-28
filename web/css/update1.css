@@ -16,7 +16,7 @@ body {
 .container {
   background-color: #ffffff;
   padding: 35px 50px;
-  width: 95%;
+  width: 70%;
   min-width: 420px;
   transform: translate(-50%, -50%);
   position: absolute;
@@ -76,19 +76,15 @@ button {
   border-radius: 3px;
   cursor: pointer;
 }
-.sbtn {
+.btn {
   display: inline-flexbox;
   background-color: #000080;
   cursor: pointer;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
-  width: 100px;
+  width: 80px;
 }
-.sbtn:hover {
-  background: #000000;
-}
-
 .cardBox {
   position: relative;
   width: 100%;
@@ -172,26 +168,45 @@ button {
 }
 
 .product-display .product-display-table .btn:last-child:hover {
-  background: #ff0000;
+  background: rgba(252, 9, 9, 0.97);
 }
 
 .product-display .product-display-table .btn:first-child:hover {
-  background: #000000;
+  background: black;
 }
-.btn {
-  display: inline-flexbox;
-  background-color: #000080;
+.btns {
+  display: inline;
+  width: 100%;
   cursor: pointer;
-  color: #ffffff;
-
-  font-size: 0.5rem;
-  padding: 0.2rem 1.2rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.4rem 1.4rem;
   background: #000080;
-  font-weight: bold;
-  width: 75px;
+  color: #fff;
   text-align: center;
+  right: 50px;
+  margin-left: 10px;
 }
 
 .btns :hover {
-  background: #ffffff;
+  background: rgba(252, 9, 9, 0.97);
+}
+
+.delete-button {
+  width: 100px;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: #f00;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btns[type="submit"] {
+  opacity: 0;
+  height: 0;
+  width: 0;
 }
