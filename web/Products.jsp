@@ -12,6 +12,28 @@
 
 </style>
     </head>
+    
+    <%
+       String msg=request.getParameter("msg");
+       if("added".equals(msg))
+       {
+       %>
+        <h3 class="alert">Product added successsfully!</h3>
+        </%>} %>
+    <%
+       if("exist".equals(msg))
+       {
+       %>
+        <h3 class="alert">Product already exist in your cart! Quantity increased!</h3>
+        <%} %>
+            <%
+               if("invalid".equals(msg))
+               {
+               %>
+                <h3 class="alert">Some thing went wrong! Try Again!</h3>
+                <%} %>
+                
+    
     <body>
         <form action="ProductsServlet" method="POST">
             <!--navbar-->
@@ -241,12 +263,7 @@ function myFunction() {
    </div>
   
  
-    <input type="text" name="productName">
-    <input type="text" name="price">
-    <input type="text" name="quantity">
-    <input type="text" name="description">
-    <input type="text" name="image">
-    <button type="submit">Submit</button>
+   
 </form>
 
         </form>
