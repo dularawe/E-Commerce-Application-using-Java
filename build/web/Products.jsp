@@ -1,15 +1,9 @@
-<%-- 
-    Document   : Products
-    Created on : Apr 26, 2024, 10:14:51 AM
-    Author     : LENOVO
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
+<html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <link rel="stylesheet" href="css/products.css">
+         
         <title>Products</title>
     
     
@@ -99,13 +93,15 @@ function myFunction() {
 
 <hr>
 
+
+                
   <!--cards-->
   
     <div class="c_row">
   <div class="c_column">
    
       
-      <h2 style="text-align:center">Product Card</h2>
+      
 
 <div class="card">
   <img src="water.jpg" alt="water" style="width:100%">
@@ -120,7 +116,7 @@ function myFunction() {
   <div class="c_column">
    
       
-      <h2 style="text-align:center">Product Card</h2>
+     
 
 <div class="card">
   <img src="water.jpg" alt="water" style="width:100%">
@@ -135,7 +131,7 @@ function myFunction() {
   <div class="c_column">
    
       
-      <h2 style="text-align:center">Product Card</h2>
+      
 
 <div class="card">
   <img src="water.jpg" alt="water" style="width:100%">
@@ -150,7 +146,7 @@ function myFunction() {
   <div class="c_column">
    
       
-      <h2 style="text-align:center">Product Card</h2>
+      
 
 <div class="card">
   <img src="water.jpg" alt="water" style="width:100%">
@@ -168,7 +164,7 @@ function myFunction() {
   <div class="c_column">
    
       
-      <h2 style="text-align:center">Product Card</h2>
+      
 
 <div class="card">
   <img src="water.jpg" alt="water" style="width:100%">
@@ -183,7 +179,7 @@ function myFunction() {
   <div class="c_column">
    
       
-      <h2 style="text-align:center">Product Card</h2>
+     
 
 <div class="card">
   <img src="water.jpg" alt="water" style="width:100%">
@@ -198,7 +194,6 @@ function myFunction() {
   <div class="c_column">
    
       
-      <h2 style="text-align:center">Product Card</h2>
 
 <div class="card">
   <img src="water.jpg" alt="water" style="width:100%">
@@ -213,7 +208,7 @@ function myFunction() {
   <div class="c_column">
    
       
-      <h2 style="text-align:center">Product Card</h2>
+      
 
 <div class="card">
   <img src="water.jpg" alt="water" style="width:100%">
@@ -224,14 +219,40 @@ function myFunction() {
 </div>
 
   </div>
+
+<div class="c_column">
+   
+      
+      
+
+<div class="card">
+  <img src="water.jpg" alt="water" style="width:100%">
+  <h1>Water Bottle</h1>
+  <p class="price">$1.99</p>
+  <p>Quality water bottles</p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+  </div>
+
    
 
 
    </div>
+  
+ 
+    <input type="text" name="productName">
+    <input type="text" name="price">
+    <input type="text" name="quantity">
+    <input type="text" name="description">
+    <input type="text" name="image">
+    <button type="submit">Submit</button>
+</form>
+
         </form>
        
         <button type="submit" name="ok" value=""></button>
     </body>
-
+</html>
 
 
