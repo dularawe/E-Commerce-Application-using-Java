@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<%-- 
+    Document   : register
+    Created on : Apr 26, 2024, 12:07:59 PM
+    Author     : Chathushka
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
