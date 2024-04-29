@@ -15,7 +15,8 @@
     />
     <link rel="stylesheet" href="css/myProfile.css" />
   </head>
-  <body>
+  <body onload="loadUserData()">
+      <%  String sessionId = session.getId(); %>
     <div class="container">
       <div class="N1"></div>
       <div class="N2">
@@ -23,7 +24,7 @@
         <span class="N4">Logo</span>
         <span class="N5">Nav Bar</span>
       </div>
-
+      
       <span class="pageLink">Homepage/ My Account</span>
       <div class="helloName">
         <img
@@ -129,10 +130,33 @@
           </form>
         </div>
       </div>
+       <form action="myProfile" action="GET" id="userIdForm">
+          <input type="hidden" name="sessionId" id="sessionId" value="<%= sessionId %>">
+          <input type="submit" value="Save Changes" class="Save" style="display:none;" />
+       </form>
 
       <div class="footerBackGround"></div>
       <span class="footerContent">Footer Section</span>
     </div>
+    <script>
+        function loadUserData(){
+            // Retrieve user data passed from the servlet
+            var userData = <%= request.getAttribute("userData") %>;
+            // Populate form fields with user data
+            document.getElementById("FirstName").value = userData.firstName;
+            document.getElementById("LastName").value = userData.lastName;
+            document.getElementById("Address").value = userData.address;
+            document.getElementById("DoB").value = userData.dateOfBirth;
+            document.getElementById("male").checked = userData.gender === "male";
+            document.getElementById("female").checked = userData.gender === "female";
+            document.getElementById("Number").value = userData.mobileNumber;
+            document.getElementById("Email").value = userData.email;
+        }
+
+        // Submit the hidden form to update session ID
+        document.getElementById("userIdForm").submit();
+    </script>
+
     <script src="js/myProfile.js"></script>
   </body>
 </html>

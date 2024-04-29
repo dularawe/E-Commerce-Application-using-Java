@@ -37,6 +37,7 @@ public class myProfile extends HttpServlet {
             out.println("An error occurred while processing your request. Please try again later.");
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
+<<<<<<< Updated upstream
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -55,5 +56,27 @@ public class myProfile extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
+=======
+    }
+    @Override
+   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    // Temporarily set the session ID for testing
+        String sessionId = "1";
+>>>>>>> Stashed changes
+
+    // Retrieve user data from the database based on the session ID
+        addUserData userData = loadUserData(sessionId);
+
+    // Set user data as request attributes
+        request.setAttribute("userData", userData);
+
+    // Forward the request to the JSP page
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/myProfile.jsp");
+        dispatcher.forward(request, response);
+}
+<<<<<<< Updated upstream
+=======
+
 
 }
+>>>>>>> Stashed changes
