@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/register.css" />
 </head>
 <body>
-    <form action="register.php" method="post">
+    <form action="register" method="POST">
         <label for="first_name">First Name:</label><br>
         <input type="text" id="first_name" name="first_name" required><br>
         
