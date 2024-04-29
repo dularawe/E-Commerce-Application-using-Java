@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en">
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <link rel="stylesheet" href="css/products.css">
@@ -13,29 +14,11 @@
 </style>
     </head>
     
-    <%
-       String msg=request.getParameter("msg");
-       if("added".equals(msg))
-       {
-       %>
-        <h3 class="alert">Product added successsfully!</h3>
-        </%>} %>
-    <%
-       if("exist".equals(msg))
-       {
-       %>
-        <h3 class="alert">Product already exist in your cart! Quantity increased!</h3>
-        <%} %>
-            <%
-               if("invalid".equals(msg))
-               {
-               %>
-                <h3 class="alert">Some thing went wrong! Try Again!</h3>
-                <%} %>
+    
                 
     
     <body>
-        <form action="ProductsServlet" method="POST">
+        
             <!--navbar-->
             
             <div class="topnav" id="myTopnav">
@@ -115,11 +98,10 @@ function myFunction() {
 
 <hr>
 
-
-                
   <!--cards-->
   
-    <div class="c_row">
+  
+    
   <div class="c_column">
    
       
@@ -134,6 +116,8 @@ function myFunction() {
 </div>
 
   </div>
+        
+        
 
   <div class="c_column">
    
@@ -260,16 +244,16 @@ function myFunction() {
    
 
 
-   </div>
+   
   
  
    
-</form>
+
 
         </form>
        
         <button type="submit" name="ok" value=""></button>
     </body>
-</html>
+
 
 
