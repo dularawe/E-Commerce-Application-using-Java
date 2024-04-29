@@ -1,7 +1,5 @@
 package folder;
 
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -15,15 +13,15 @@ public class addProduct {
     private Statement st;
 
     public void insertProduct(String ProductName, int Price, int ProductQuantity, String ProductDescription, String ProductImage) {
-        connectToDB();
-        String query = "INSERT INTO products (ProductName, Price, ProductQuantity, ProductDescription, ProductImage) VALUES ('" + ProductName + "', " + Price + ", " + ProductQuantity + ", '" + ProductDescription + "', '" + ProductImage + "')";
+    connectToDB();
+    String query = "INSERT INTO products (ProductName, Price, ProductQuantity, ProductDescription, ProductImage) VALUES ('" + ProductName + "', " + Price + ", " + ProductQuantity + ", '" + ProductDescription + "', '" + ProductImage + "')";
 
-        try {
-            st.executeUpdate(query);
-            System.out.println("Record inserted");
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
+    try {
+        st.executeUpdate(query);
+        System.out.println("Record inserted");
+    } catch (SQLException ex) {
+        System.out.println(ex.getMessage());
+    }
     }
 
     private void connectToDB() {
