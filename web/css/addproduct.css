@@ -1,16 +1,18 @@
-/* Styles for Add Product Form */
-.first {
+.container {
   max-width: 750px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Styles for Basic Information Box */
-.box {
+.first {
   margin-bottom: 20px;
+}
+
+.box {
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 10px;
+  margin-bottom: 20px;
 }
 
 .box h3 {
@@ -25,11 +27,10 @@
   margin-top: 0;
 }
 
-/* Styles for Input Fields */
 input[type="text"],
 input[type="number"],
 input[type="file"] {
-  width: calc(100% - 22px); /* Adjust for padding and border */
+  width: calc(100% - 22px);
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -37,7 +38,6 @@ input[type="file"] {
   box-sizing: border-box;
 }
 
-/* Styles for Submit and Clear Buttons */
 input[type="submit"],
 input[type="reset"] {
   background-color: #4CAF50;
@@ -51,4 +51,10 @@ input[type="reset"] {
 input[type="submit"]:hover,
 input[type="reset"]:hover {
   background-color: #45a049;
+}
+
+#imagePreview {
+  display: none;
+  max-width: 200px;
+  max-height: 200px;
 }
