@@ -1,0 +1,20 @@
+SMAP
+viewproduct_jsp.java
+JSP
+*S JSP
+*F
++ 0 viewproduct.jsp
+viewproduct.jsp
+*L
+5,34:48
+39,9:83
+47,3:92
+50,6:95,3
+56:113
+57:114,2
+58:116
+59:117,3
+60,6:120
+66:126,3
+67,7:129
+*E
