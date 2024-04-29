@@ -109,6 +109,7 @@ public class loginservlet extends HttpServlet {
         }
     } catch (ClassNotFoundException | SQLException ex) {
         Logger.getLogger(loginservlet.class.getName()).log(Level.SEVERE, null, ex);
+        
     }
        
        
