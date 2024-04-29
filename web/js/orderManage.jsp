@@ -13,7 +13,7 @@
             <ul>
                 <li><a href="orderManage.jsp">Order List</a></li>
                 <li><a href="shippingManage.jsp">Shipping List</a></li>
-                <!-- Add links to other pages as needed -->
+                
             </ul>
         </nav>
     </header>
@@ -32,7 +32,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Populate this section dynamically with orders -->
+            
                 <tr>
                     <td>1</td>
                     <td>John Doe</td>
@@ -41,12 +41,12 @@
                     <td>Processing</td>
                     <td><a href="orderdetails.jsp?id=1">View Details</a></td>
                 </tr>
-                <!-- Repeat this structure for each order -->
+            
             </tbody>
         </table>
     </main>
     <footer>
-        <!-- Footer content goes here -->
+     
     </footer>
 </body>
 </html>
