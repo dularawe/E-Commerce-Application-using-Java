@@ -1,25 +1,34 @@
- package folder;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package folder;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author MSI
+ * @author DELL
  */
-@WebServlet(urlPatterns = {"/NewServlet"})
-public class NewServlet extends HttpServlet {
+@WebServlet(name = "loginservlet", urlPatterns = {"/loginservlet"})
+public class loginservlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,10 +47,10 @@ public class NewServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
+            out.println("<title>Servlet loginservlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet loginservlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -73,7 +82,52 @@ public class NewServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+            // processRequest(request, response);
+ 
+            try {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce", "root", "");
+        String email = request.getParameter("mail");
+        String password = request.getParameter("psw");
+        PreparedStatement ps = con.prepareStatement("SELECT Email FROM users WHERE Email=? AND Password=?");
+        ps.setString(1, email);
+        ps.setString(2, password);
+        ResultSet rs = ps.executeQuery();
+
+        if (rs.next()) {
+            // Create or retrieve HttpSession object
+            HttpSession session = request.getSession();
+            // Set an attribute in the session to identify the user
+            session.setAttribute("emailId", email);
+            
+            // Redirect to Products.jsp
+            response.sendRedirect("Products.jsp");
+        } else {
+            // Failed login attempt, redirect back to login.jsp
+            response.sendRedirect("login.jsp?error=invalid");
+        }
+    } catch (ClassNotFoundException | SQLException ex) {
+        Logger.getLogger(loginservlet.class.getName()).log(Level.SEVERE, null, ex);
+    }
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
     }
 
     /**
@@ -85,5 +139,9 @@ public class NewServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private PreparedStatement conPreparedStatement(String select_Emal_from_users_where_Email_and_Pa) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

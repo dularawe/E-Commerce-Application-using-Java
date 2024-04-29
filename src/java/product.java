@@ -1,11 +1,5 @@
- package folder;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+import folder.addProduct;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -14,12 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author MSI
- */
-@WebServlet(urlPatterns = {"/NewServlet"})
-public class NewServlet extends HttpServlet {
+@WebServlet(name = "product", urlPatterns = {"/product"})
+public class product extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,10 +28,10 @@ public class NewServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
+            out.println("<title>Servlet product</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet product at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -59,6 +49,11 @@ public class NewServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
+        
+        
+        
         processRequest(request, response);
     }
 
@@ -70,11 +65,23 @@ public class NewServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
+   @Override
+protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+    
+    String ProductName = request.getParameter("ProductName");
+    String ProductDescription = request.getParameter("description");
+    String ProductImage = request.getParameter("ProductImage");
+    int Price = Integer.parseInt(request.getParameter("price"));
+    int ProductQuantity = Integer.parseInt(request.getParameter("quantity"));
+    
+    PrintWriter out = response.getWriter();
+    out.println("<script>window.location.href='viewproduct.jsp';</script>");
+    
+    addProduct b = new addProduct();
+    b.insertProduct(ProductName,Price,ProductQuantity,ProductDescription,ProductImage);
+}
+
 
     /**
      * Returns a short description of the servlet.
