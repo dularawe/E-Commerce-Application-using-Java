@@ -1,9 +1,8 @@
 
-    
     <html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <title>Product</title>
+            <title>Product 6786</title> <!-- Include random number in the title -->
             <link rel="stylesheet" href="css/view.css">
         </head>
         <body>
@@ -13,7 +12,6 @@
             <a href="update.jsp"><input type="submit" value="Update" class="sbtn">
         <div class="product-display">
    
-
           </table>
         </div>
         </div>
