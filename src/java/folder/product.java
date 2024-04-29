@@ -1,3 +1,5 @@
+package folder;
+
 
 import folder.addProduct;
 import java.io.IOException;
