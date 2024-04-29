@@ -1,4 +1,4 @@
-<%-- Document : myProfile Created on : Apr 25, 2024, 2:25:49 PM Author : HP --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -110,7 +110,7 @@
                   </div>
                 </div>
 
-                <div class="pNum">
+                <div class="pN                                            um">
                   <span class="pNumInput">Phone Number</span>
                   <input type="number" name="Number" class="numInput" required />
                 </div>
