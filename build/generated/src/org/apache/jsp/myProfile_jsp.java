@@ -41,7 +41,7 @@ public final class myProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-<<<<<<< Updated upstream
+
       out.write("\r\n");
       out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
@@ -180,7 +180,7 @@ public final class myProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <script src=\"js/myProfile.js\"></script>\r\n");
       out.write("  </body>\r\n");
       out.write("</html>\r\n");
-=======
+
       out.write("\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
@@ -349,7 +349,7 @@ public final class myProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <script src=\"js/myProfile.js\"></script>\n");
       out.write("  </body>\n");
       out.write("</html>\n");
->>>>>>> Stashed changes
+
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
