@@ -44,6 +44,11 @@ public class product extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet product at " + request.getContextPath() + "</h1>");
+            out.println("<script>");
+            out.println("window.onload = function() {");
+            out.println("   location.reload();");
+            out.println("}");
+            out.println("</script>");
             out.println("</body>");
             out.println("</html>");
         }
