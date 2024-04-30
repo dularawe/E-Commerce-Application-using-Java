@@ -1,25 +1,37 @@
+package folder;
+
+import folder.addProduct;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+
 
 import folder.addProduct;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import javax.servlet.http.Part;
+
+
+
+
 @WebServlet(name = "product", urlPatterns = {"/product"})
+@MultipartConfig
 public class product extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -37,16 +49,8 @@ public class product extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
+   
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
@@ -57,40 +61,41 @@ public class product extends HttpServlet {
         processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-   @Override
+
+@Override
 protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-    
+
     String ProductName = request.getParameter("ProductName");
     String ProductDescription = request.getParameter("description");
-    String ProductImage = request.getParameter("ProductImage");
-    int Price = Integer.parseInt(request.getParameter("price"));
-    int ProductQuantity = Integer.parseInt(request.getParameter("quantity"));
+    Part filePart = request.getPart("ProductImage");
+    String imageFileName = filePart.getSubmittedFileName();
+    int Price = 0;
+    int ProductQuantity = 0;
     
-    PrintWriter out = response.getWriter();
-    out.println("<script>window.location.href='viewproduct.jsp';</script>");
-    
+    try {
+        Price = Integer.parseInt(request.getParameter("price"));
+        ProductQuantity = Integer.parseInt(request.getParameter("quantity"));
+    } catch (NumberFormatException e) {
+        // Handle parsing error
+    }
+
+    // Specify the directory where you want to upload images
+    String uploadDirectory = "E:\\GitHub\\E-Commerce-Application-using-Java\\web\\images\\";
+    File uploadDir = new File(uploadDirectory);
+    if (!uploadDir.exists()) {
+        uploadDir.mkdirs();
+    }
+
+    String uploadPath = uploadDirectory + File.separator + imageFileName;
+    try (InputStream is = filePart.getInputStream()) {
+        Files.copy(is, Paths.get(uploadPath), StandardCopyOption.REPLACE_EXISTING);
+    }
+
+    // Now you can use the data to insert the product into the database
     addProduct b = new addProduct();
-    b.insertProduct(ProductName,Price,ProductQuantity,ProductDescription,ProductImage);
-}
+    b.insertProduct(ProductName, Price, ProductQuantity, ProductDescription, imageFileName);
 
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
-}
+    // Redirect to the desired page
+    response.sendRedirect("viewproduct.jsp");
+}}

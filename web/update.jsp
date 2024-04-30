@@ -36,7 +36,7 @@
     </head>
     <body>
     <div class="container">
-        <h1>Gents Items Update Section</h1>
+        <h1> Update Section</h1>
         <a href="viewproduct.jsp"><input type="submit" value="Back" class="btn"></a>
     <div class="product-display">
       <table class="product-display-table">
@@ -65,7 +65,7 @@
 
             <tr>
                 <td><%=rs.getInt("ProductID")%></td>
-                <td><%=rs.getString("ProductImage")%></td>
+                <td><img src="images/<%=rs.getString("ProductImage")%>" alt="Product Image"style="width:100px;height:100px"></td>
                 <td><%=rs.getString("ProductName")%></td>
                 <td><%=rs.getString("ProductDescription")%></td>
                 <td><%=rs.getInt("Price")%></td>
