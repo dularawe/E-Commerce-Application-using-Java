@@ -7,6 +7,10 @@ package folder;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -72,7 +76,26 @@ public class shoppingCartServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       // processRequest(request, response);
+       private void addToWishlist(String clientId, String productId) {
+    // Your actual database connection details
+    String url = "jdbc:mysql://localhost:3306/ecommerce";
+    String username = "root";
+    String password = "";
+
+    try (Connection conn = DriverManager.getConnection(url, username, password)) {
+        String sql = "INSERT INTO wishlist (clientId, productId) VALUES (?, ?)";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, clientId);
+            stmt.setString(2, productId);
+            stmt.executeUpdate();
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+       
+       
     }
 
     /**
