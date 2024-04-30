@@ -24,13 +24,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import javax.servlet.http.Part;
 
+
+
+
 @WebServlet(name = "product", urlPatterns = {"/product"})
 @MultipartConfig
-public class product extends HttpServlet {
-
-
-
-@WebServlet(name = "product", urlPatterns = {"/product"})
 public class product extends HttpServlet {
 
 
@@ -70,78 +68,34 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
 
     String ProductName = request.getParameter("ProductName");
     String ProductDescription = request.getParameter("description");
-    
-    int Price = 0;
-    String priceParam = request.getParameter("price");
-    if (priceParam != null && !priceParam.isEmpty()) {
-        Price = Integer.parseInt(priceParam);
-    }
-    
-    int ProductQuantity = 0;
-    String quantityParam = request.getParameter("quantity");
-    if (quantityParam != null && !quantityParam.isEmpty()) {
-        ProductQuantity = Integer.parseInt(quantityParam);
-    }
-    
     Part filePart = request.getPart("ProductImage");
-    
     String imageFileName = filePart.getSubmittedFileName();
+    int Price = 0;
+    int ProductQuantity = 0;
     
-    String uploadDirectory = "E:\\GitHub\\E-Commerce-Application-using-Java\\web\\images\\"; // Change this to your desired directory
-    
+    try {
+        Price = Integer.parseInt(request.getParameter("price"));
+        ProductQuantity = Integer.parseInt(request.getParameter("quantity"));
+    } catch (NumberFormatException e) {
+        // Handle parsing error
+    }
+
+    // Specify the directory where you want to upload images
+    String uploadDirectory = "E:\\GitHub\\E-Commerce-Application-using-Java\\web\\images\\";
     File uploadDir = new File(uploadDirectory);
     if (!uploadDir.exists()) {
         uploadDir.mkdirs();
     }
-  
+
     String uploadPath = uploadDirectory + File.separator + imageFileName;
     try (InputStream is = filePart.getInputStream()) {
         Files.copy(is, Paths.get(uploadPath), StandardCopyOption.REPLACE_EXISTING);
     }
-    
-    
+
+    // Now you can use the data to insert the product into the database
     addProduct b = new addProduct();
     b.insertProduct(ProductName, Price, ProductQuantity, ProductDescription, imageFileName);
 
-    
-    response.sendRedirect("viewproduct.jsp"); 
-}
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-   @Override
-protected void doPost(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
-    
-    String ProductName = request.getParameter("ProductName");
-    String ProductDescription = request.getParameter("description");
-    String ProductImage = request.getParameter("ProductImage");
-    int Price = Integer.parseInt(request.getParameter("price"));
-    int ProductQuantity = Integer.parseInt(request.getParameter("quantity"));
-    
-    PrintWriter out = response.getWriter();
-    out.println("<script>window.location.href='viewproduct.jsp';</script>");
-    
-    addProduct b = new addProduct();
-    b.insertProduct(ProductName,Price,ProductQuantity,ProductDescription,ProductImage);
-}
-
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
-
-}
+    // Redirect to the desired page
+    response.sendRedirect("viewproduct.jsp");
+}}
