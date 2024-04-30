@@ -1,27 +1,39 @@
 package folder;
 
+import folder.addProduct;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+
 
 import folder.addProduct;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import javax.servlet.http.Part;
+
+@WebServlet(name = "product", urlPatterns = {"/product"})
+@MultipartConfig
+public class product extends HttpServlet {
+
+
+
 @WebServlet(name = "product", urlPatterns = {"/product"})
 public class product extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -39,16 +51,8 @@ public class product extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
+   
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
@@ -58,6 +62,50 @@ public class product extends HttpServlet {
         
         processRequest(request, response);
     }
+
+
+@Override
+protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+
+    String ProductName = request.getParameter("ProductName");
+    String ProductDescription = request.getParameter("description");
+    
+    int Price = 0;
+    String priceParam = request.getParameter("price");
+    if (priceParam != null && !priceParam.isEmpty()) {
+        Price = Integer.parseInt(priceParam);
+    }
+    
+    int ProductQuantity = 0;
+    String quantityParam = request.getParameter("quantity");
+    if (quantityParam != null && !quantityParam.isEmpty()) {
+        ProductQuantity = Integer.parseInt(quantityParam);
+    }
+    
+    Part filePart = request.getPart("ProductImage");
+    
+    String imageFileName = filePart.getSubmittedFileName();
+    
+    String uploadDirectory = "E:\\GitHub\\E-Commerce-Application-using-Java\\web\\images\\"; // Change this to your desired directory
+    
+    File uploadDir = new File(uploadDirectory);
+    if (!uploadDir.exists()) {
+        uploadDir.mkdirs();
+    }
+  
+    String uploadPath = uploadDirectory + File.separator + imageFileName;
+    try (InputStream is = filePart.getInputStream()) {
+        Files.copy(is, Paths.get(uploadPath), StandardCopyOption.REPLACE_EXISTING);
+    }
+    
+    
+    addProduct b = new addProduct();
+    b.insertProduct(ProductName, Price, ProductQuantity, ProductDescription, imageFileName);
+
+    
+    response.sendRedirect("viewproduct.jsp"); 
+}
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -94,5 +142,6 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
 
 }

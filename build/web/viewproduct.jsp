@@ -48,7 +48,8 @@
                 
                 <tr>
                    <td><%=rs.getInt("ProductID")%></td>
-                    <td><%=rs.getString("ProductImage")%></td>
+                    <td><img src="images/<%=rs.getString("ProductImage")%>" alt="Product Image"style="width:100px;height:100px"></td>
+
                     <td><%=rs.getString("ProductName")%></td>
                     <td><%=rs.getString("ProductDescription")%></td>
                     <td><%=rs.getString("Price")%></td>
