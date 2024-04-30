@@ -1,7 +1,6 @@
 package folder;
 
 
-import folder.addProduct;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -10,8 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "product", urlPatterns = {"/product"})
+@WebServlet(name = "products", urlPatterns = {"/products"})
 public class product extends HttpServlet {
+
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -71,17 +71,19 @@ public class product extends HttpServlet {
 protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
     
-    String ProductName = request.getParameter("ProductName");
-    String ProductDescription = request.getParameter("description");
-    String ProductImage = request.getParameter("ProductImage");
-    int Price = Integer.parseInt(request.getParameter("price"));
-    int ProductQuantity = Integer.parseInt(request.getParameter("quantity"));
-    
-    PrintWriter out = response.getWriter();
-    out.println("<script>window.location.href='viewproduct.jsp';</script>");
-    
-    addProduct b = new addProduct();
-    b.insertProduct(ProductName,Price,ProductQuantity,ProductDescription,ProductImage);
+     // Retrieve form data
+        String productName = request.getParameter("ProductName");
+        String description = request.getParameter("description");
+        String image = request.getParameter("ProductImage");
+        int price = Integer.parseInt(request.getParameter("price"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        
+        // Call method to insert product into database
+        Products products = new Products(); // Assuming your Products class handles database operations
+        products.insertProduct(productName, price, quantity, description, image);
+        
+        // Redirect to a new page or display a success message
+        response.sendRedirect("Products.jsp");
 }
 
 

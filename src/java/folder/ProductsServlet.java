@@ -67,7 +67,6 @@ public class ProductsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        
 // Retrieve form data
         String productName = request.getParameter("productName");
         int price = Integer.parseInt(request.getParameter("price"));
@@ -79,9 +78,8 @@ public class ProductsServlet extends HttpServlet {
         Products products = new Products();
         products.insertProducts(productName, price, quantity, description, image);
 
-        // Redirect back to the HTML page or a success page
+        // Redirect back to the JSP page or a success page
         response.sendRedirect("products.jsp");
-
         
        
     }
