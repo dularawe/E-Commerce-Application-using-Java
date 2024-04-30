@@ -35,6 +35,10 @@ public class Products {
             Logger.getLogger(Products.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    void insertProduct(String productName, int price, int quantity, String description, String image) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 
