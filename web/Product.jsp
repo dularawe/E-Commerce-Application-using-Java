@@ -27,16 +27,27 @@
             
             while(rs.next()) { 
         %>
-        <div class="c_column">
-            <div class="card">
-                
-                <p><img src="images/<%=rs.getString("ProductImage")%>" alt="Product Image"style="width:100%"></p>
-                <h1><%= rs.getString("ProductName") %></h1>
-                <p><%= rs.getString("ProductDescription") %></p>
-                <p class="price"><%= rs.getString("Price") %></p>
-                <p><a href="addproduct.jsp"><button>Add to Cart</button></a></p>
+        <div class="product-container">
+    <% 
+    while(rs.next()) { 
+    %>
+    <div class="product-card">
+        <div class="product-image">
+            <img src="images/<%=rs.getString("ProductImage")%>" alt="Product Image">
+        </div>
+        <div class="product-details">
+            <h2><%= rs.getString("ProductName") %></h2>
+            <p class="description"><%= rs.getString("ProductDescription") %></p>
+            <p class="price">$<%= rs.getString("Price") %></p>
+            <div class="action">
+                <a href="cart.jsp" class="add-to-cart">Add to Cart</a>
             </div>
         </div>
+    </div>
+    <% 
+    } // end while
+    %>
+</div>
         <% } %>
     </body>
 </html>
