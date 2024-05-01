@@ -76,8 +76,7 @@ public class shoppingCartServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       // processRequest(request, response);
-       private void addToWishlist(String clientId, String productId) {
+       // processRequest(request, response);private void addToWishlist(String clientId, String productId) {
     // Your actual database connection details
     String url = "jdbc:mysql://localhost:3306/ecommerce";
     String username = "root";
@@ -86,7 +85,9 @@ public class shoppingCartServlet extends HttpServlet {
     try (Connection conn = DriverManager.getConnection(url, username, password)) {
         String sql = "INSERT INTO wishlist (clientId, productId) VALUES (?, ?)";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            String clientId = null;
             stmt.setString(1, clientId);
+            String productId = null;
             stmt.setString(2, productId);
             stmt.executeUpdate();
         }
@@ -103,9 +104,3 @@ public class shoppingCartServlet extends HttpServlet {
      *
      * @return a String containing servlet description
      */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
-}
