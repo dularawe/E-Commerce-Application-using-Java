@@ -1,10 +1,3 @@
-<%-- 
-    Document   : view product
-    Created on : Apr 24, 2024, 12:19:47 AM
-    Author     : MSI
---%>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +10,7 @@
     <div class="container">
         <h1>ADD NEW ITEM</h1>
    
-        <form action="product" method="POST" enctype="multipart/form-data">
+        <form action="product" method="POST">
             <table>
                 <tr>
                     <td>

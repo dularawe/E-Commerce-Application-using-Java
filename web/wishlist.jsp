@@ -110,19 +110,13 @@
                             </tbody>
                         </table>
                             <div class="submit-text coupon">
-										<button type="submit" onclick="redirectToCheckout()">CheckOut </button>
+										<button type="submit">CheckOut </button>
 									</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-                                <script>
-    function redirectToCheckout() {
-        // Redirect to checkout.jsp
-        window.location.href = "checkout.jsp";
-    }
-</script>
 <jsp:include page="footer.jsp" />
 <jsp:include page="scripts.jsp" />
     </body>

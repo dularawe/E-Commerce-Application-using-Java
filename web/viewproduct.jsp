@@ -20,7 +20,6 @@
         <div class="container"><br>
         <h1>Product</h1>
         <a href="addproduct.jsp"><input type="submit" value="Add" class="sbtn"></a>
-        <a href="update.jsp"><input type="submit" value="Update" class="sbtn">
     <div class="product-display">
       <table class="product-display-table">
          <thead>
@@ -48,21 +47,22 @@
                 
                 <tr>
                    <td><%=rs.getInt("ProductID")%></td>
-                    <td><img src="images/<%=rs.getString("ProductImage")%>" alt="Product Image"style="width:100px;height:100px"></td>
-
+                    <td><%=rs.getString("ProductImage")%></td>
                     <td><%=rs.getString("ProductName")%></td>
-                    <td><%=rs.getString("ProductDescription")%></td>
+                    <td><%=rs.getString("ProductQuantity")%></td>
                     <td><%=rs.getString("Price")%></td>
                     <td><%=rs.getInt("ProductQuantity")%></td>
                     <td>
+                        <%--<button class="btn" onclick="openEditPopup('<%=rs.getInt("id")%>', '<%=rs.getString("name")%>', '<%=rs.getString("description")%>', '<%=rs.getString("price")%>')">Update</button>--%>
                         <form action="DeleteProduct" method="post">
     <input type="hidden" name="ProductID" value="<%=rs.getInt("ProductID")%>">
     <input type="submit" class="btn" value="Delete">
 </form>
+
                     </td>
                 </tr>
                 
-                <% }  %>
+                <% } %>
          
       </table>
     </div>

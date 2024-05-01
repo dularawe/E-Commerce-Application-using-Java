@@ -4,75 +4,83 @@
     Author     : DELL
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/login.css">
-        <title>Login_Page</title>
-    </head>
+<html class="no-js" lang="">
+    <jsp:include page="header.jsp" />
     <body>
-        <div class="container"> 
-          
-         <div class="row">
-              <div class="column_1" style="background-color:#ffffcc">
-                  <form action="loginservletnew" method="post">
-                  <div class="row_1">
-                      <h2>L O G I N</h2>
-                           
-                  </div>
-                  
-                      <div class="row_col">
-                          
-                          <div class="or">
-                          If You Are Already A Member,Easily Log In
-                          </div>
-                          
-                          <div class="row_2">
-                            
-                              <input type="email" placeholder="Email" name="mail" value="" >                             
-                        
-                          </div>
-                          
-                          <div class="row_2">
-                           
-                              <input type="password" placeholder="Password" name="psw" value="" >
-                         
-                          </div>
-                          
-                          <div class="row_3">
-                            
-                              <input type="submit" value="Login" name="" >
-                         
-                           </div>
-                          
-                          <div class="or">
-                             If You Are Not A Member,Easily Sign up
-                          </div>
-                          
-                          <div class="row_3">
-                            
-                              <input type="submit" value="Sign-Up" name="Cr" >
-                         
-                           </div>
-                      </div>
-                      
-                   </form>  
-                  
-              </div>
-             <div class="column_2" style="background-color:#cccccc;">
-                 
-    
-              </div>
-         </div> 
-               
 
-               
-          
-           
-             
-        
+        <jsp:include page="navbar.jsp" />
+        <jsp:include page="connection.jsp" />
+
+        <div class="pages-title section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="pages-title-text text-center">
+                            <h2>Register</h2>
+                            <ul class="text-left">
+                                <li><a href="index.html">Home </a></li>
+                                <li><span> // </span>Register</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </body>
+        <!-- pages-title-end -->
+        <!-- login content section start -->
+    <section class="pages login-page section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="main-input padding60">
+                        <div class="log-title">
+                            <h3><strong>registered customers</strong></h3>
+                        </div>
+                        <div class="login-text">
+                            <div class="custom-input">
+                                <p>If you have an account with us, Please log in!</p>
+                                <form id="loginForm" action="loginservletnew" method="post">
+                                    <input type="text" name="mail" id="email" placeholder="Email" />
+                                    <input type="password" name="psw" id="psw" placeholder="Password" />
+
+                                    <div class="submit-text">
+                                        <input type="submit" value="Login" style="background-color: black; color:white" >
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="main-input padding60 new-customer">
+                        <div class="log-title">
+                            <h3><strong>new customers</strong></h3>
+                        </div>
+                        <div class="custom-input">
+                            <form action="register" method="POST">
+                                <input type="text" name="first_name" placeholder="Name here.." />
+                                <input type="text" name="last_name" placeholder="First here.." />
+                                <input type="text" name="gender" placeholder="Gender" />
+                                <input type="text" name="mobile" placeholder="Phone Number.." />
+                                <input type="text" name="email" placeholder="Email Address.." />
+                                <input type="password" name="password" placeholder="Password" />
+                                 <div class="submit-text">
+                                        <input type="submit" value="Register" style="background-color: black; color:white" >
+                                    </div>
+
+                        
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <jsp:include page="footer.jsp" />
+    <jsp:include page="scripts.jsp" />
+
+
+
+</body>
 </html>
