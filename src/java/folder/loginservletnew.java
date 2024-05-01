@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -115,14 +116,19 @@ public class loginservletnew extends HttpServlet {
 
                         HttpSession httpSession = request.getSession();
                         httpSession.setAttribute("emailId", email);
-                        response.sendRedirect("Products.jsp");
+                        response.sendRedirect("Product.jsp");
                     } else {
                         // Password does not match
                         response.sendRedirect("login.jsp?error=password");
                     }
                 } else {
                     // Email not found in the database
-                    response.sendRedirect("login.jsp?error=email");
+                    //response.sendRedirect("login.jsp?error=email");
+                    request.setAttribute("loginError", "Invalid email or password.");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp?error=email");
+                    dispatcher.forward(request, response);
+
+                    
                 }
 
                 // Closing resources
@@ -141,29 +147,21 @@ public class loginservletnew extends HttpServlet {
             // Email or password not provided
             response.sendRedirect("login.jsp?error=empty");
             }
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
+        
        
        
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+    
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private static class loginservlet {
+
+        public loginservlet() {
+        }
+    }
 
 }
