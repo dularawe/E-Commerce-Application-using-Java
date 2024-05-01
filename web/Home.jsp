@@ -2,7 +2,7 @@
     <html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <title>Product 8268</title> <!-- Include random number in the title -->
+            <title>Product 2985</title> <!-- Include random number in the title -->
             <link rel="stylesheet" href="css/view.css">
         </head>
         <body>
