@@ -29,7 +29,8 @@
         %>
         <div class="c_column">
             <div class="card">
-                <p><%= rs.getString("ProductImage") %></p>
+                
+                <p><img src="images/<%=rs.getString("ProductImage")%>" alt="Product Image"style="width:100%"></p>
                 <h1><%= rs.getString("ProductName") %></h1>
                 <p><%= rs.getString("ProductDescription") %></p>
                 <p class="price"><%= rs.getString("Price") %></p>
