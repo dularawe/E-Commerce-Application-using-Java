@@ -27,8 +27,9 @@
         <h1>Shipping Management</h1>
         <nav>
             <ul>
-                <li><a href="orderManage.jsp">Order List</a></li>
+                <li><a href="order Manage.jsp">Order List</a></li>
                 <li><a href="shippingManage.jsp">Shipping List</a></li>
+                <li><a href="adminHome.jsp">Home</a></li>
             </ul>
         </nav>
     </header>
@@ -37,22 +38,20 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>Shipment ID</th>
-                    <th>Customer Name</th>
-                    <th>Order Date</th>
+                    <th> ID</th>
+                    <th>Client ID</th>
+                    <th>Order ID</th>
                     <th>Total Amount</th>
-                    <th>Status</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 <% while(rs.next()) { %>
                 <tr>
-                    <td><%= rs.getInt("OrderID") %></td>
-                    <td><%= rs.getString("ClientName") %></td>
-                    <td><%= rs.getString("OrderDate") %></td>
+                    <td><%= rs.getInt("ID") %></td>
+                    <td><%= rs.getString("ClientID") %></td>
+                    <td><%= rs.getString("OrderID") %></td>
                     <td><%= rs.getDouble("TotalAmount") %></td>
-                    <td><%= rs.getString("Status") %></td>
                     <td>
                         <form action="deleteWishlistItem.jsp" method="post">
                             <input type="hidden" name="OrderID" value="<%= rs.getInt("OrderID") %>">
