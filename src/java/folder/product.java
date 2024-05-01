@@ -79,7 +79,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         
     }
 
-    String uploadDirectory = "E:\\GitHub\\E-Commerce-Application-using-Java\\web\\images\\";
+    String uploadDirectory = "C:\\Users\\LENOVO\\OneDrive\\Desktop\\githubui1\\E-Commerce-Application-using-Java\\web\\images\\";
     File uploadDir = new File(uploadDirectory);
     if (!uploadDir.exists()) {
         uploadDir.mkdirs();
