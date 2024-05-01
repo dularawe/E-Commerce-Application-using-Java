@@ -1,3 +1,19 @@
+<%@ page import="java.sql.*" %>
+<%@ page import="java.io.*" %>
+
+<%
+    Connection con = null;
+    Statement st = null;
+    ResultSet rs = null;
+    try {
+        String url = "jdbc:mysql://localhost:3306/ecommerce";
+        String query = "SELECT * FROM wishlist";
+        Class.forName("com.mysql.jdbc.Driver");
+        con = DriverManager.getConnection(url, "root", "");
+        st = con.createStatement();
+        rs = st.executeQuery(query);
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,14 +29,12 @@
             <ul>
                 <li><a href="orderManage.jsp">Order List</a></li>
                 <li><a href="shippingManage.jsp">Shipping List</a></li>
-                
             </ul>
         </nav>
     </header>
     <main>
         <h2>Shipping List</h2>
-        <table border = "1">
-            
+        <table border="1">
             <thead>
                 <tr>
                     <th>Shipment ID</th>
@@ -32,16 +46,21 @@
                 </tr>
             </thead>
             <tbody>
-                
+                <% while(rs.next()) { %>
                 <tr>
-                    <td>1</td>
-                    <td>John Doe</td>
-                    <td>2024-04-28</td>
-                    <td>$100.00</td>
-                    <td>Processing</td>
-                    <td><a href="viewdetails.jsp?id=1">View Details</a></td>
+                    <td><%= rs.getInt("OrderID") %></td>
+                    <td><%= rs.getString("ClientName") %></td>
+                    <td><%= rs.getString("OrderDate") %></td>
+                    <td><%= rs.getDouble("TotalAmount") %></td>
+                    <td><%= rs.getString("Status") %></td>
+                    <td>
+                        <form action="deleteWishlistItem.jsp" method="post">
+                            <input type="hidden" name="OrderID" value="<%= rs.getInt("OrderID") %>">
+                            <input type="submit" class="btn" value="Delete">
+                        </form>
+                    </td>
                 </tr>
-                
+                <% } %>
             </tbody>
         </table>
     </main>
@@ -50,3 +69,15 @@
     </footer>
 </body>
 </html>
+
+<%
+    } catch (Exception e) {
+        // Handle exceptions
+        e.printStackTrace();
+    } finally {
+        // Close resources
+        try { if (rs != null) rs.close(); } catch (SQLException e) { e.printStackTrace(); }
+        try { if (st != null) st.close(); } catch (SQLException e) { e.printStackTrace(); }
+        try { if (con != null) con.close(); } catch (SQLException e) { e.printStackTrace(); }
+    }
+%>

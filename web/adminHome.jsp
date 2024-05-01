@@ -78,7 +78,7 @@
                     <% 
                     rs.beforeFirst();
                     while(rs.next()) { %>
-                      <h1><%= rs.getString("TotalOrders") %></h1>
+                      <h1><%= rs.getString("TotalOrders")%></h1>
                   <% } %>  
                 </div>
               </div>

@@ -27,7 +27,7 @@
         <h1>Order Management</h1>
         <nav>
             <ul>
-                <li><a href="orderManage.jsp">Order List</a></li>
+                <li><a href="order Manage.jsp">Order List</a></li>
                 <li><a href="shippingManage.jsp">Shipping List</a></li>
                 <!-- Add links to other pages as needed -->
             </ul>
