@@ -17,6 +17,61 @@
         <link rel="stylesheet" href="css/product.css">
     </head>
     <body>
+        <!--navbar-->
+            
+            <div class="topnav" id="myTopnav">
+  <!--<a href="#home" class="active">Home</a>-->
+  
+  <div class="dropdown">
+    <button class="dropbtn">USD 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">LKR</a>
+      <a href="#">AUD</a>
+      <a href="#">CAD</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">EN
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">SI</a>
+      <a href="#">TA</a>
+      <a href="#">HI</a>
+    </div>
+  </div> 
+  <a href="#WishList">WishList</a>
+  <a href="#My Account">My Account</a>
+  <a style="float: left;">Call Us  <span style="color:red;">075-0224919</span></a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+</script>
+
+<hr>
+
+
+        
+        
+        
+        
+        
+        
+        <h1> Flash Sale</h1>
         <%
             String url = "jdbc:mysql://localhost:3306/ecommerce";
             String query = "SELECT * FROM products";
@@ -44,10 +99,14 @@
             </div>
         </div>
     </div>
+            
+            
     <% 
     } // end while
     %>
 </div>
         <% } %>
+        
+        
     </body>
 </html>

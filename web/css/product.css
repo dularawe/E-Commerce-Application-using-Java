@@ -1,4 +1,160 @@
+/* Navbar */
+.topnav {
+  overflow: hidden;
+  background-color: #333; /* Dark background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.topnav a {
+  float: right;
+  display: block;
+  color: #fff; /* Light text color */
+  text-align: center;
+  padding: 16px 20px; /* Increase padding for better touch interaction */
+  text-decoration: none;
+  font-size: 16px; /* Decrease font size for better readability */
+  transition: color 0.3s ease; /* Add smooth transition for color change */
+}
+
+.topnav a.active,
+.topnav a:hover {
+  color: #04AA6D; /* Highlight color */
+}
+
+/* Dropdown */
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px; /* Decrease font size for better consistency */
+  border: none;
+  outline: none;
+  color: #fff; /* Light text color */
+  padding: 16px 20px; /* Increase padding for better touch interaction */
+  background-color: transparent; /* Transparent background */
+  cursor: pointer; /* Change cursor to pointer for better indication */
+  transition: color 0.3s ease; /* Add smooth transition for color change */
+}
+
+.dropdown:hover .dropbtn {
+  color: #04AA6D; /* Highlight color on hover */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333; /* Dark background color */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1); /* Add shadow for depth */
+  z-index: 1;
+  border-radius: 8px; /* Add border radius for a rounded appearance */
+}
+
+.dropdown-content a {
+  color: #fff; /* Light text color */
+  padding: 12px 20px; /* Increase padding for better touch interaction */
+  display: block;
+  text-align: left;
+  text-decoration: none;
+  transition: background-color 0.3s ease; /* Add smooth transition for background color change */
+}
+
+.dropdown-content a:hover {
+  background-color: #555; /* Highlight color on hover */
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child),
+  .dropdown .dropbtn {
+    display: none;
+  }
+
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav.responsive .dropdown {
+    float: none;
+  }
+
+  .topnav.responsive .dropdown-content {
+    position: static;
+  }
+
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+
+
+
+
+/* Set background color for the entire page */
+body {
+    background-color: #f5f5f5; /* Light grey */
+}
+
 /* Styles for product cards */
+
+/* Define card colors */
+.card-color-1 {
+    background-color: #f8f8f8; /* Light grey */
+}
+
+.card-color-2 {
+    background-color: #f0f5f9; /* Light blue */
+}
+
+.card-color-3 {
+    background-color: #f9e8e0; /* Light pink */
+}
+
+.card-color-4 {
+    background-color: #e3f2fd; /* Light cyan */
+}
+
+.card-color-5 {
+    background-color: #f3e5f5; /* Light purple */
+}
+
+.card-color-6 {
+    background-color: #ede7f6; /* Light lavender */
+}
+
+.card-color-7 {
+    background-color: #e8eaf6; /* Light periwinkle */
+}
+
+.card-color-8 {
+    background-color: #e0f2f1; /* Light turquoise */
+}
+
+.card-color-9 {
+    background-color: #dcedc8; /* Light lime */
+}
+
+.card-color-10 {
+    background-color: #d9e6f5; /* Light cornflower blue */
+}
 
 /* Product container */
 .product-container {
@@ -10,13 +166,13 @@
 
 /* Product card */
 .product-card {
-    background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: calc(25% - 20px); /* Adjust width here for 4 products in a column */
+    width: calc(25% - 20px); /* Adjust width here for 4 products in a row */
+    height: 400px; /* Set a fixed height for consistency */
 }
 
 .product-card:last-child {
@@ -29,12 +185,18 @@
 }
 
 /* Product image */
+.product-image {
+    height: 50%; /* Set height for the image container */
+    overflow: hidden;
+}
+
 .product-image img {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-radius: 15px 15px 0 0;
     display: block;
     transition: transform 0.3s ease;
     width: 100%;
+    height: 100%; /* Ensure the image fills its container */
+    object-fit: cover; /* Maintain aspect ratio */
 }
 
 .product-image img:hover {
@@ -43,13 +205,14 @@
 
 /* Product details */
 .product-details {
+    height: 50%; /* Set height for the details container */
     padding: 20px;
 }
 
 .product-details h2 {
     color: #333;
     font-size: 20px;
-    margin: 0 0 10px;
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
@@ -67,10 +230,6 @@
 }
 
 /* Add to Cart button */
-.action {
-    text-align: center;
-}
-
 .add-to-cart {
     background-color: #ff5722; /* Orange color */
     border: none;
@@ -80,11 +239,12 @@
     padding: 12px 24px;
     text-decoration: none;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .add-to-cart:hover {
     background-color: #ff6f3b; /* Lighter shade of orange */
+    transform: translateY(-2px);
 }
 
 /* Responsive adjustments */
