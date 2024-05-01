@@ -123,10 +123,8 @@ public class loginservletnew extends HttpServlet {
                     }
                 } else {
                     // Email not found in the database
-                    //response.sendRedirect("login.jsp?error=email");
-                    request.setAttribute("loginError", "Invalid email or password.");
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp?error=email");
-                    dispatcher.forward(request, response);
+                    response.sendRedirect("login.jsp?error=email");
+                   
 
                     
                 }

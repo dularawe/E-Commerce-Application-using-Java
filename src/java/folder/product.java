@@ -10,13 +10,10 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
-
-
 import folder.addProduct;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -79,7 +76,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         
     }
 
-    String uploadDirectory = "C:\\Users\\LENOVO\\OneDrive\\Desktop\\githubui1\\E-Commerce-Application-using-Java\\web\\images\\";
+    String uploadDirectory = "E:\\GitHub\\E-Commerce-Application-using-Java\\web\\images\\";
     File uploadDir = new File(uploadDirectory);
     if (!uploadDir.exists()) {
         uploadDir.mkdirs();
