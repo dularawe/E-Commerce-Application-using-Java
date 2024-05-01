@@ -44,19 +44,18 @@ public class product extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet product at " + request.getContextPath() + "</h1>");
+            out.println("<script>");
+            out.println("window.onload = function() {");
+            out.println("   location.reload();");
+            out.println("}");
+            out.println("</script>");
             out.println("</body>");
             out.println("</html>");
         }
     }
 
-   
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-        
-        
         
         processRequest(request, response);
     }
@@ -77,10 +76,9 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         Price = Integer.parseInt(request.getParameter("price"));
         ProductQuantity = Integer.parseInt(request.getParameter("quantity"));
     } catch (NumberFormatException e) {
-        // Handle parsing error
+        
     }
 
-    // Specify the directory where you want to upload images
     String uploadDirectory = "E:\\GitHub\\E-Commerce-Application-using-Java\\web\\images\\";
     File uploadDir = new File(uploadDirectory);
     if (!uploadDir.exists()) {
@@ -92,10 +90,8 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         Files.copy(is, Paths.get(uploadPath), StandardCopyOption.REPLACE_EXISTING);
     }
 
-    // Now you can use the data to insert the product into the database
     addProduct b = new addProduct();
     b.insertProduct(ProductName, Price, ProductQuantity, ProductDescription, imageFileName);
-
-    // Redirect to the desired page
     response.sendRedirect("viewproduct.jsp");
-}}
+    }
+}

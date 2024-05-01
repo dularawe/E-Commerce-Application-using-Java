@@ -83,7 +83,7 @@
       <div id="editPopup" class="editPopup-content">
         <span class="close" onclick="closeEditPopup()">&times;</span>
         <h2>Edit Product Details</h2>
-        <form action="newupdate" method="post">
+        <form action="newupdate" method="post"enctype="multipart/form-data">
             <input type="hidden" id="editProductID" name="id">
             <label for="editProductName">Name:</label>
             <input type="text" id="editProductName" name="name"><br><br>

@@ -1,3 +1,10 @@
+<%-- 
+    Document   : view product
+    Created on : Apr 24, 2024, 12:19:47 AM
+    Author     : MSI
+--%>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
