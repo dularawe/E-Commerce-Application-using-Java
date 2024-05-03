@@ -83,6 +83,6 @@ $("#countdown-1,#countdown-2").countdown({
 
   // on (03:07:52) | off (3:7:52) - two_digits set to ON maintains layout consistency
   format: "on"
-},
+}
 
 );
