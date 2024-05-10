@@ -62,7 +62,7 @@ public class newupdate extends HttpServlet {
         String picture = getSubmittedFileName(filePart);
         
         try {
-            String uploadDirectory = "E:\\GitHub\\E-Commerce-Application-using-Java\\web\\images\\";
+            String uploadDirectory = "E:\\New Folder\\AdminDash\\web\\images\\";
             File uploadDir = new File(uploadDirectory);
             if (!uploadDir.exists()) {
                 uploadDir.mkdirs();
@@ -95,7 +95,7 @@ public class newupdate extends HttpServlet {
             con.close();
 
             if (rowsAffected > 0) {
-                request.getRequestDispatcher("viewproduct.jsp").forward(request, response);
+                request.getRequestDispatcher("adminHome.jsp").forward(request, response);
             } else {
                 out.println("<h3>Failed to update product with ID " + id + "!</h3>");
             }

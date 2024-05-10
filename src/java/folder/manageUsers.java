@@ -64,14 +64,7 @@ public class manageUsers extends HttpServlet {
         processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -104,7 +97,7 @@ public class manageUsers extends HttpServlet {
 
                 
                 if (rowsAffected > 0) {
-                    request.getRequestDispatcher("adminUsersManage.jsp").forward(request, response);
+                    request.getRequestDispatcher("users.jsp").forward(request, response);
                 } else {
                     out.println("<h3>Failed to delete Users with ID " + UserID + "!</h3>");
                 }

@@ -1,6 +1,6 @@
 <%-- 
     Document   : update
-    Created on : Apr 27, 2024, 12:10:05 AM
+    Created on : May 6, 2024, 12:12:53 AM
     Author     : MSI
 --%>
 
@@ -31,13 +31,36 @@
             document.getElementById('editPopup').style.display = 'none';
         }
     </script>
-    <link rel="stylesheet" href="css/update1.css">
+    <link rel="stylesheet" href="css/productview.css">
     <link rel="stylesheet" href="css/update2.css">
     </head>
     <body>
     <div class="container">
+      <div class="header">
+        <div class="header-top">
+          <div class="profile"></div>
+        </div>
+        <div class="header-bottom">
+          <div>
+            <img src="icons/person3.svg" />
+            <div>
+              <div>Hi there,</div>
+              <div class="greeting">Date and time
+              </div>
+            </div>
+          </div>
+          <div class="header-buttons">
+              <div class="header-button"><a href="addproduct.jsp">New</a></div>
+              <div class="header-button"><a href="update.jsp">Update</a></div>
+            <div><div></div></div>
+          </div>
+        </div>
+      </div>
+      <jsp:include page="sidebar.jsp" />
+      <div class="content">
+      <div class="projects">
         <h1> Update Section</h1>
-        <a href="viewproduct.jsp"><input type="submit" value="Back" class="btn"></a>
+        
     <div class="product-display">
       <table class="product-display-table">
          <thead>
@@ -65,7 +88,7 @@
 
             <tr>
                 <td><%=rs.getInt("ProductID")%></td>
-                <td><img src="images/<%=rs.getString("ProductImage")%>" alt="Product Image"style="width:100px;height:100px"></td>
+                <td><img src="images/<%=rs.getString("ProductImage")%>" alt="Product Image" style="width:100px;height:100px"></td>
                 <td><%=rs.getString("ProductName")%></td>
                 <td><%=rs.getString("ProductDescription")%></td>
                 <td><%=rs.getInt("Price")%></td>
@@ -83,7 +106,7 @@
       <div id="editPopup" class="editPopup-content">
         <span class="close" onclick="closeEditPopup()">&times;</span>
         <h2>Edit Product Details</h2>
-        <form action="newupdate" method="post"enctype="multipart/form-data">
+        <form action="newupdate" method="post" enctype="multipart/form-data">
             <input type="hidden" id="editProductID" name="id">
             <label for="editProductName">Name:</label>
             <input type="text" id="editProductName" name="name"><br><br>
@@ -98,5 +121,6 @@
             <input name="btn" type="submit" value="Update">
         </form>
     </div>
+     </div></div> 
   </body>
 </html>

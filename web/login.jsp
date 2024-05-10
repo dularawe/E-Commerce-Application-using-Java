@@ -7,7 +7,6 @@
 <html class="no-js" lang="">
     <jsp:include page="header.jsp" />
     <body>
-
         <jsp:include page="navbar.jsp" />
         <jsp:include page="connection.jsp" />
 

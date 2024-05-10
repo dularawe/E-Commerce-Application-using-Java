@@ -37,7 +37,7 @@
       <jsp:include page="sidebar.jsp" />
       <div class="content">
         <div class="projects">  
-            <jsp:include page="productview.jsp" />
+            <jsp:include page="adminUserManage.jsp" />
         </div>
       </div>
       </div>
