@@ -1,24 +1,53 @@
+<%-- 
+    Document   : addproduct
+    Created on : May 5, 2024, 11:06:37 PM
+    Author     : MSI
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/addproduct.css">
-    <title>Add Product</title>
-</head>
-<body>
-    <div class="container">
-        <h1>ADD NEW ITEM</h1>
-   
-        <form action="product" method="POST">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Add Product</title>
+        <link rel="stylesheet" href="css/adminHome.css">
+        <link rel="stylesheet" href="css/addproduct.css">
+        
+    </head>
+    <body>
+       <div class="container">
+      <div class="header">
+        <div class="header-top">
+          <div class="profile"></div>
+        </div>
+        <div class="header-bottom">
+          <div>
+            <img src="icons/person3.svg" />
+            <div>
+              <div>Hi there,</div>
+              <div class="greeting">Date and time
+              </div>
+            </div>
+          </div>
+          <div class="header-buttons">
+              <div class="header-button"><a href="addproduct.jsp">New</a></div>
+              <div class="header-button"><a href="update.jsp">Update</a></div>
+            <div><div></div></div>
+          </div>
+        </div>
+      </div>
+      <jsp:include page="sidebar.jsp" />
+      <div class="content">
+        <div class="projects">  
+            <form action="product" method="POST" enctype="multipart/form-data">
             <table>
                 <tr>
                     <td>
-                        <label for="name">Product Name</label>
+                        <label for="name"> Product Name</label>
                         <input type="text" id="ProductName" name="ProductName" placeholder="ProductName" />
                     </td>
                     <td>
-                        <label for="description">Description</label>
+                        <label for="description"> Description</label>
                         <input type="text" id="description" name="description" placeholder="Description" />
                     </td>
                 </tr>
@@ -61,5 +90,7 @@
             profilePic.src = URL.createObjectURL(inputFile.files[0]);
         };
     </script>
-</body>
+        </div>
+        </div>
+    </body>
 </html>

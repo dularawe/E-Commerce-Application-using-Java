@@ -76,7 +76,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         
     }
 
-    String uploadDirectory = "E:\\GitHub\\E-Commerce-Application-using-Java\\web\\images\\";
+    String uploadDirectory = "E:\\New Folder\\AdminDash\\web\\images\\";
     File uploadDir = new File(uploadDirectory);
     if (!uploadDir.exists()) {
         uploadDir.mkdirs();
@@ -89,6 +89,6 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
 
     addProduct b = new addProduct();
     b.insertProduct(ProductName, Price, ProductQuantity, ProductDescription, imageFileName);
-    response.sendRedirect("viewproduct.jsp");
+    response.sendRedirect("adminHome.jsp");
     }
 }
